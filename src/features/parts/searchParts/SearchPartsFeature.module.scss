@@ -1,52 +1,14 @@
 @use "@/shared/styles/breakpoints" as bp;
 
-.modeBanner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  min-height: 64px;
-  padding: 12px 17px;
-  margin-bottom: 20px;
-  border: 1px solid #e0e7ee;
-  border-radius: 9px;
-  background: #edf2f6;
-  font-size: 12px;
-  line-height: 1.6;
-  color: #66758a;
-  > div {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    min-width: 0;
-  }
-  strong {
-    font-weight: 600;
-    color: #4b5f75;
-  }
-  button {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    min-height: 44px;
-    padding: 4px;
-    border: 0;
-    background: none;
-    color: #4b5f75;
-    white-space: nowrap;
-    font-size: 11px;
-    font-weight: 600;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
 .searchCard {
+  position: relative;
+  z-index: 1;
+  margin: -28px 24px 0;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 13px;
   padding: 27px 30px 0;
-  box-shadow: 0 3px 7px #24272d02;
+  box-shadow: 0 12px 40px #183a5c09;
   h2 {
     font-size: 23px;
     font-weight: 650;
@@ -61,7 +23,7 @@
   font-size: 9px;
   font-weight: 650;
   letter-spacing: 1.3px;
-  color: #b32a30;
+  color: var(--accent);
   margin-bottom: 15px;
 }
 .searchDescription {
@@ -88,7 +50,7 @@
   background: #fdfdfd;
   &:focus-within {
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px #c82d320d;
+    box-shadow: 0 0 0 3px #035aa412;
   }
   > svg {
     color: #9197a2;
@@ -149,8 +111,8 @@
     border-radius: 4px;
     font-size: 11px;
     &:hover {
-      background: #faecec;
-      color: #b32a30;
+      background: #e9f3fc;
+      color: var(--accent);
     }
   }
 }
@@ -175,7 +137,7 @@
 .smallDot {
   width: 5px;
   height: 5px;
-  background: #c9343b;
+  background: #56a486;
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -269,32 +231,12 @@
   .brandGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .modeBanner {
-    align-items: flex-start;
-    > div {
-      align-items: flex-start;
-    }
-  }
+
   .offersBox {
     height: 720px;
   }
 }
 @media (max-width: bp.$phone) {
-  .modeBanner {
-    min-height: 138px;
-    align-items: stretch;
-    flex-direction: column;
-    padding: 14px;
-    gap: 6px;
-    font-size: 11px;
-    > div > svg {
-      margin-top: 2px;
-    }
-    button {
-      align-self: flex-start;
-      padding-left: 28px;
-    }
-  }
   .searchCard {
     padding: 22px 18px 0;
     h2 {
@@ -318,10 +260,6 @@
   .searchCardBottom {
     font-size: 10px;
     align-items: flex-start;
-    > span:last-child {
-      text-align: right;
-      max-width: 110px;
-    }
   }
   .brandGrid {
     gap: 10px;
@@ -362,5 +300,65 @@
   }
   .stepHeading p {
     font-size: 9px;
+  }
+}
+
+.modeSwitch {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+  min-height: 36px;
+  margin-block: -8px;
+  padding: 4px 0 4px 10px;
+  border: 0;
+  background: transparent;
+  color: #7c8ea2;
+  font-size: 10px;
+  &:hover {
+    color: var(--accent);
+  }
+}
+.demoStatus {
+  color: #a37535 !important;
+  .smallDot {
+    background: #c79952;
+  }
+}
+@media (max-width: bp.$phone) {
+  .searchCard {
+    margin-inline: 10px;
+    padding-inline: 17px;
+    border-radius: 11px;
+    h2 {
+      font-size: 19px;
+    }
+  }
+  .searchCardBottom {
+    align-items: center;
+    font-size: 9px;
+    gap: 8px;
+  }
+  .modeSwitch {
+    font-size: 9px;
+    gap: 4px;
+  }
+}
+@media (max-width: bp.$compact) {
+  .searchCard {
+    margin-inline: 8px;
+    padding-inline: 13px;
+    h2 {
+      font-size: 18px;
+    }
+  }
+  .searchCardBottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .modeSwitch {
+    margin: 0;
+    padding-left: 0;
   }
 }

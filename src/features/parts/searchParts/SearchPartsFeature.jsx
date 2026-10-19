@@ -1,14 +1,7 @@
 import styles from "./SearchPartsFeature.module.scss";
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  Search,
-  ArrowRight,
-  Check,
-  Info,
-  X,
-  PackageSearch,
-} from "lucide-react";
+import { Search, ArrowRight, Check, X, PackageSearch } from "lucide-react";
 import {
   fetchBrands,
   fetchOffers,
@@ -136,36 +129,12 @@ function SearchPartsFeature() {
     );
   return (
     <>
-      <div className={styles.modeBanner}>
-        <div>
-          <Info size={18} />
-          <span>
-            {mode === "demo" ? (
-              <>
-                <strong>Демонстрационный режим.</strong> Пример данных для
-                знакомства с подбором.
-              </>
-            ) : (
-              <>
-                <strong>Реальный API.</strong> Для запросов нужен ключ
-                покупателя на сервере.
-              </>
-            )}
-          </span>
-        </div>
-        <button
-          onClick={() => dispatch(setMode(mode === "demo" ? "live" : "demo"))}
-        >
-          {mode === "demo" ? "Подключить API" : "Вернуться к демо"}
-          <ArrowRight size={15} />
-        </button>
-      </div>
       <section className={styles.searchCard}>
         <div className={styles.sectionEyebrow}>
           <PackageSearch size={18} />
-          ПОИСК ПО КАТАЛОГУ
+          ПОИСК ПО АРТИКУЛУ
         </div>
-        <h2>Какая деталь вам нужна?</h2>
+        <h2>Найдём именно то, что нужно.</h2>
         <p className={styles.searchDescription}>
           Введите артикул — мы найдём производителей, аналоги и предложения.
         </p>
@@ -203,13 +172,19 @@ function SearchPartsFeature() {
           ))}
         </div>
         <div className={styles.searchCardBottom}>
-          <span>
+          <span className={mode === "demo" ? styles.demoStatus : ""}>
             <span className={styles.smallDot} />
             {mode === "demo"
-              ? "Демонстрационный каталог"
-              : "Каталог Favorit-parts"}
+              ? "Демо · учебные данные"
+              : "Поиск в каталоге Favorit-parts"}
           </span>
-          <span>Поиск начинается автоматически</span>
+          <button
+            className={styles.modeSwitch}
+            onClick={() => dispatch(setMode(mode === "demo" ? "live" : "demo"))}
+          >
+            {mode === "demo" ? "Вернуться к каталогу" : "Посмотреть демо"}
+            <ArrowRight size={13} />
+          </button>
         </div>
       </section>
       <section className={styles.resultsSection}>

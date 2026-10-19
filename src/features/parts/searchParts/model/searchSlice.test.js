@@ -17,3 +17,7 @@ it("игнорирует предложения предыдущего прои�
   state = reducer(state, fetchOffers.fulfilled([{ id: "old" }], "old", {}));
   expect(state.offers).toEqual([]);
 });
+
+it("открывает реальный каталог по умолчанию", () => {
+  expect(reducer(undefined, { type: "init" }).mode).toBe("live");
+});

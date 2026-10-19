@@ -24,7 +24,7 @@ export const fetchOffers = createAsyncThunk(
 const initialState = {
   number: "",
   brand: "",
-  mode: "demo",
+  mode: "live",
   brands: [],
   offers: [],
   brandsStatus: "idle",

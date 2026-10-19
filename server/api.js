@@ -23,7 +23,7 @@ const goodSchema = z.object({
 const querySchema = z.object({
   number: z.string().trim().min(1).max(80),
   brand: z.string().trim().min(1).max(100).optional(),
-  mode: z.enum(["demo", "live"]),
+  mode: z.enum(["demo", "live"]).default("live"),
 });
 export function parseGoods(data) {
   if (data?.error) throw new Error("UPSTREAM_ERROR");
@@ -42,24 +42,20 @@ export function createSearchHandler({
     res.set("Cache-Control", "no-store");
     const result = querySchema.safeParse(req.query);
     if (!result.success)
-      return res
-        .status(400)
-        .json({
-          message:
-            "Укажите артикул длиной от 1 до 80 символов и корректный режим поиска.",
-        });
+      return res.status(400).json({
+        message:
+          "Укажите артикул длиной от 1 до 80 символов и корректный режим поиска.",
+      });
     const { number, brand, mode } = result.data;
     if (mode === "demo") {
       await new Promise((resolve) => setTimeout(resolve, demoDelay));
       return res.json({ goods: getDemoGoods(number, brand) });
     }
     if (!apiKey)
-      return res
-        .status(503)
-        .json({
-          message:
-            "Ключ API ещё не подключён. Добавьте FAVORIT_API_KEY в .env на сервере или вернитесь в деморежим.",
-        });
+      return res.status(503).json({
+        message:
+          "Ключ API ещё не подключён. Добавьте FAVORIT_API_KEY в .env на сервере или вернитесь в деморежим.",
+      });
     try {
       const { data } = await request(
         "https://api.favorit-parts.ru/hs/hsprice/",
@@ -78,13 +74,11 @@ export function createSearchHandler({
       return res.json({ goods: parseGoods(data) });
     } catch (error) {
       const timeout = error.code === "ECONNABORTED";
-      return res
-        .status(timeout ? 504 : 502)
-        .json({
-          message: timeout
-            ? "API не ответил вовремя. Повторите запрос позже."
-            : "Не удалось получить ответ Favorit-parts. Проверьте ключ, доступность API и лимит запросов.",
-        });
+      return res.status(timeout ? 504 : 502).json({
+        message: timeout
+          ? "API не ответил вовремя. Повторите запрос позже."
+          : "Не удалось получить ответ Favorit-parts. Проверьте ключ, доступность API и лимит запросов.",
+      });
     }
   };
 }
