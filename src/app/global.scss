@@ -51,7 +51,7 @@
 }
 
 :root {
-  --header-height: 88px;
+  --header-height: 76px;
   --surface: #fff;
   --accent: #b63540;
   --accent-hover: #922b34;
@@ -128,7 +128,7 @@ select:focus-visible,
 
 @media (max-width: bp.$phone) {
   :root {
-    --header-height: 84px;
+    --header-height: 70px;
   }
 }
 

@@ -1,16 +1,30 @@
 @use "@/shared/styles/breakpoints" as bp;
 .app {
+  padding-top: var(--header-height);
   min-width: 0;
   overflow-wrap: anywhere;
 }
 .header {
-  position: sticky;
-  top: 0;
+  position: fixed;
+  inset: 0 0 auto;
   z-index: 50;
   height: var(--header-height);
-  padding-top: 10px;
   color: #293140;
-  background: transparent;
+  box-shadow: 0 4px 18px #27334a08;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-bottom: 1px solid #ffffffd9;
+    background: linear-gradient(120deg, #f8fafce6, #f8fafccc);
+    -webkit-backdrop-filter: blur(16px) saturate(120%);
+    backdrop-filter: blur(16px) saturate(120%);
+    // Keep the blur on its own composited surface, separate from the text.
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform;
+  }
 }
 .headerInner,
 .main,
@@ -24,32 +38,7 @@
   display: flex;
   align-items: center;
   gap: 36px;
-  position: relative;
-  width: calc(100% - 48px);
-  max-width: 1480px;
-  height: 64px;
-  padding-inline: 24px;
-  border: 1px solid #ffffffdc;
-  border-radius: 18px;
-  background: linear-gradient(125deg, #ffffffa6, #ffffff4d 52%, #ffffff8c);
-  -webkit-backdrop-filter: blur(16px) saturate(130%);
-  backdrop-filter: blur(16px) saturate(130%);
-  box-shadow:
-    0 8px 24px #27334a09,
-    0 1px 3px #27334a08,
-    inset 0 1px 0 #fff,
-    inset 0 -1px 0 #ffffffa6;
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    border-radius: inherit;
-    background: linear-gradient(180deg, #ffffff45, transparent 48%);
-  }
-  > * {
-    position: relative;
-  }
+  height: 100%;
 }
 .wordmark {
   display: flex;
@@ -219,19 +208,13 @@
   }
 }
 @media (max-width: bp.$phone) {
-  .header {
-    padding-top: 8px;
-  }
   .headerInner,
   .main,
   .footer {
     padding-inline: 18px;
   }
   .headerInner {
-    width: calc(100% - 24px);
-    height: 64px;
     padding-inline: 14px;
-    border-radius: 16px;
     gap: 12px;
   }
   .wordmark {
