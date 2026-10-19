@@ -1,6 +1,6 @@
 {
-  "measuredAt": "2026-10-19T17:15:00.726Z",
-  "environment": "Local production build, Chromium, CPU 4x slowdown, 1.6 Mbps / 150 ms RTT; delayed synthetic 7000 offers; cold browser contexts",
+  "measuredAt": "2026-10-19T17:22:51.526Z",
+  "environment": "Local production build, Chromium with visible native scrollbars, CPU 4x slowdown, 1.6 Mbps / 150 ms RTT; delayed synthetic 7000 offers; cold browser contexts",
   "limits": {
     "LCP": 2500,
     "INP": 200,
@@ -14,23 +14,23 @@
         "height": 1000
       },
       "initial": {
-        "LCP": 1200,
+        "LCP": 1216,
         "CLS": 0
       },
       "vitals": {
-        "LCP": 1200,
-        "CLS": 0.00042087537977430556,
-        "INP": 64
+        "LCP": 1216,
+        "CLS": 0.0004297825484764543,
+        "INP": 56
       },
       "shifts": [
         {
-          "value": 0.000025667860243055555,
+          "value": 0.00002621108033240997,
           "sources": [
             "P"
           ]
         },
         {
-          "value": 0.00021718343098958332,
+          "value": 0.00022177977839335177,
           "sources": [
             "#text",
             "P",
@@ -39,7 +39,7 @@
           ]
         },
         {
-          "value": 0.00020369194878472221,
+          "value": 0.0002080027700831025,
           "sources": [
             "P",
             "H3",
@@ -47,7 +47,7 @@
           ]
         },
         {
-          "value": 0.00029416975610050154,
+          "value": 0.0003003953985841797,
           "sources": [
             "H3",
             "P",
@@ -65,31 +65,31 @@
         "height": 1024
       },
       "initial": {
-        "LCP": 1196,
+        "LCP": 1216,
         "CLS": 0
       },
       "vitals": {
-        "LCP": 1196,
-        "CLS": 0.0017452631921817858,
-        "INP": 48
+        "LCP": 1216,
+        "CLS": 0.001780029391229232,
+        "INP": 64
       },
       "shifts": [
         {
-          "value": 0.0008726315960908929,
+          "value": 0.000890014695614616,
           "sources": [
             "P",
             "H3"
           ]
         },
         {
-          "value": 0.0008726315960908929,
+          "value": 0.000890014695614616,
           "sources": [
             "P",
             "H3"
           ]
         },
         {
-          "value": 0.0007581491954624653,
+          "value": 0.0007732517690772554,
           "sources": [
             "H3",
             "P",
@@ -107,17 +107,17 @@
         "height": 844
       },
       "initial": {
-        "LCP": 1184,
+        "LCP": 1196,
         "CLS": 0
       },
       "vitals": {
-        "LCP": 1184,
-        "CLS": 0.003749081120030363,
-        "INP": 56
+        "LCP": 1196,
+        "CLS": 0.0038990443648315772,
+        "INP": 48
       },
       "shifts": [
         {
-          "value": 0.0019341345739895721,
+          "value": 0.002011499956949155,
           "sources": [
             "#text",
             "P",
@@ -126,7 +126,7 @@
           ]
         },
         {
-          "value": 0.001814946546040791,
+          "value": 0.0018875444078824226,
           "sources": [
             "P",
             "H3",
@@ -134,7 +134,7 @@
           ]
         },
         {
-          "value": 0.002237660128625558,
+          "value": 0.00232716653377058,
           "sources": [
             "H3",
             "P",
@@ -152,44 +152,41 @@
         "height": 740
       },
       "initial": {
-        "LCP": 1224,
+        "LCP": 1188,
         "CLS": 0
       },
       "vitals": {
-        "LCP": 1224,
-        "CLS": 0.0077744682763422205,
-        "INP": 48
+        "LCP": 1188,
+        "CLS": 0.005381961755131479,
+        "INP": 64
       },
       "shifts": [
         {
-          "value": 0.0077744682763422205,
+          "value": 0.005381961755131479,
           "sources": [
             "_brandResults_bfnv9_259"
           ]
         },
         {
-          "value": 0.00217266234905725,
+          "value": 0.0008333089998245649,
           "sources": [
-            "#text",
-            "P",
             "H3",
             "_icon_1q52s_30"
           ]
         },
         {
-          "value": 0.0020296101204403307,
+          "value": 0.0008333089998245649,
           "sources": [
-            "P",
             "H3",
             "_icon_1q52s_30"
           ]
         },
         {
-          "value": 0.003544413798564189,
+          "value": 0.0021091491393929944,
           "sources": [
             "H3",
-            "P",
-            "_icon_1q52s_30"
+            "_icon_1q52s_30",
+            "P"
           ]
         }
       ],

@@ -29,7 +29,9 @@ try {
     await new Promise((resolve) => setTimeout(resolve, 100));
   }
   if (!ready) throw new Error("Production server did not start");
-  browser = await chromium.launch();
+  browser = await chromium.launch({
+    ignoreDefaultArgs: ["--hide-scrollbars"],
+  });
   const library = await readFile(
     new URL(
       "../node_modules/web-vitals/dist/web-vitals.iife.js",
@@ -142,7 +144,7 @@ try {
   const report = {
     measuredAt: new Date().toISOString(),
     environment:
-      "Local production build, Chromium, CPU 4x slowdown, 1.6 Mbps / 150 ms RTT; delayed synthetic 7000 offers; cold browser contexts",
+      "Local production build, Chromium with visible native scrollbars, CPU 4x slowdown, 1.6 Mbps / 150 ms RTT; delayed synthetic 7000 offers; cold browser contexts",
     limits: { LCP: 2500, INP: 200, CLS: 0.1 },
     note: "Laboratory interaction measurements, not field p75 or a PageSpeed score. Covers initial load, delayed brands/offers, sorting/filtering/pagination, empty and error states.",
     results,

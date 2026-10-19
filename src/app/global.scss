@@ -131,3 +131,11 @@ select:focus-visible,
     --header-height: 84px;
   }
 }
+
+@supports (scrollbar-gutter: stable) {
+  // The root keeps the gutter during scroll lock; Radix must not add it again.
+  html body[data-scroll-locked] {
+    margin-right: 0 !important;
+    --removed-body-scroll-bar-size: 0px;
+  }
+}
