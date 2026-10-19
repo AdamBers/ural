@@ -272,3 +272,10 @@
     padding-inline: 9px;
   }
 }
+
+@media (forced-colors: active) {
+  .pageHeading h1 {
+    background: none;
+    color: CanvasText;
+  }
+}

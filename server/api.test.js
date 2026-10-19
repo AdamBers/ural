@@ -1,7 +1,12 @@
 import { it, expect, vi } from "vitest";
+import { EventEmitter } from "node:events";
 import { createSearchHandler, parseGoods } from "./api.js";
 const response = () => {
-  const res = { set: vi.fn(), status: vi.fn(), json: vi.fn() };
+  const res = Object.assign(new EventEmitter(), {
+    set: vi.fn(),
+    status: vi.fn(),
+    json: vi.fn(),
+  });
   res.status.mockReturnValue(res);
   return res;
 };
@@ -71,4 +76,27 @@ it("проверяет вложенные аналоги и склады в фо
     analogues: [{ brand: "Mapco" }],
     warehouses: [{ price: 12533.62 }],
   });
+});
+
+it("отменяет upstream-запрос при отключении клиента и не пишет ответ в закрытый сокет", async () => {
+  const request = vi.fn(
+    (_url, { signal }) =>
+      new Promise((_resolve, reject) => {
+        signal.addEventListener("abort", () => reject(new Error("cancelled")), {
+          once: true,
+        });
+      }),
+  );
+  const res = response();
+  const pending = createSearchHandler({ request, apiKey: "test-key" })(
+    { query: { number: "A" } },
+    res,
+  );
+  const signal = request.mock.calls[0][1].signal;
+  expect(signal.aborted).toBe(false);
+  res.emit("close");
+  await pending;
+  expect(signal.aborted).toBe(true);
+  expect(res.json).not.toHaveBeenCalled();
+  expect(res.listenerCount("close")).toBe(0);
 });

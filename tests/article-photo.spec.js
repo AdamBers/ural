@@ -119,3 +119,47 @@ test.describe("камера на мобильном экране", () => {
     }
   });
 });
+
+test("ошибка загрузки модели OCR не оставляет загрузку и необработанное исключение", async ({
+  page,
+}) => {
+  const errors = [];
+  page.on("pageerror", (error) => errors.push(error.message));
+  await page.route("**/ocr/lang/**", (route) =>
+    route.fulfill({ status: 404, body: "not found" }),
+  );
+  await page.goto("/");
+  await page
+    .getByLabel("Выбрать фото артикула", { exact: true })
+    .setInputFiles(path.resolve("tests/fixtures/article.png"));
+  await expect(page.getByRole("alert")).toContainText(
+    "Не удалось прочитать фото",
+    { timeout: 15000 },
+  );
+  await expect(page.getByRole("progressbar")).not.toBeVisible();
+  await expect(page.getByLabel("Артикул для поиска")).toBeEditable();
+  await expect.poll(() => page.workers().length).toBe(0);
+  expect(errors).toEqual([]);
+});
+
+test("закрытие окна завершает worker даже во время загрузки модели OCR", async ({
+  page,
+}) => {
+  let pendingRoute;
+  const modelRequested = new Promise((resolve) => {
+    page.route("**/ocr/lang/**", (route) => {
+      pendingRoute = route;
+      resolve();
+    });
+  });
+  await page.goto("/");
+  await page
+    .getByLabel("Выбрать фото артикула", { exact: true })
+    .setInputFiles(path.resolve("tests/fixtures/article.png"));
+  await modelRequested;
+  expect(page.workers().length).toBeGreaterThan(0);
+  await page.getByRole("button", { name: "Закрыть распознавание" }).click();
+  await expect(page.getByRole("dialog")).not.toBeVisible();
+  await expect.poll(() => page.workers().length).toBe(0);
+  await pendingRoute.abort().catch(() => {});
+});

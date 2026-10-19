@@ -21,71 +21,62 @@ async function prepareImage(file) {
 }
 export async function recognizeArticle(file, { signal, onProgress }) {
   let worker;
-  let startup;
-  let rejectAborted;
-  let timedOut = false;
-  const terminate = () => {
-    if (worker) void worker.terminate().catch(() => {});
-    else if (startup)
-      void startup.then((value) => value.terminate()).catch(() => {});
-  };
-  const abort = () => {
-    terminate();
-    rejectAborted?.(new DOMException("Распознавание отменено.", "AbortError"));
-  };
-  const aborted = new Promise((_, reject) => {
-    rejectAborted = reject;
+  let rejectCancelled;
+  const cancelled = new Promise((_, reject) => {
+    rejectCancelled = reject;
   });
-  // Prevent an unhandled rejection when cancellation happens during image decoding.
-  void aborted.catch(() => {});
+  void cancelled.catch(() => {});
+  const abort = () =>
+    rejectCancelled(new DOMException("Распознавание отменено.", "AbortError"));
   signal.addEventListener("abort", abort, { once: true });
-  const timeout = setTimeout(() => {
-    timedOut = true;
-    terminate();
-    rejectAborted(
-      new Error(
-        "Не удалось распознать фото за минуту. Попробуйте более чёткий снимок.",
+  const timeout = setTimeout(
+    () =>
+      rejectCancelled(
+        new Error(
+          "Не удалось распознать фото за минуту. Попробуйте более чёткий снимок.",
+        ),
       ),
-    );
-  }, 60000);
+    60000,
+  );
   try {
     signal.throwIfAborted();
-    const image = await prepareImage(file);
+    const canvas = await Promise.race([prepareImage(file), cancelled]);
+    const image = await Promise.race([
+      new Promise((resolve, reject) =>
+        canvas.toBlob(
+          (blob) =>
+            blob
+              ? resolve(blob)
+              : reject(new Error("Не удалось подготовить фото.")),
+          "image/png",
+        ),
+      ),
+      cancelled,
+    ]);
     signal.throwIfAborted();
-    const { createWorker, PSM } = await import("tesseract.js");
-    signal.throwIfAborted();
-    if (timedOut)
-      throw new Error(
-        "Не удалось распознать фото за минуту. Попробуйте более чёткий снимок.",
-      );
-    const base = `${location.origin}/ocr`;
-    startup = createWorker("eng", 1, {
-      workerPath: `${base}/worker.min.js`,
-      corePath: `${base}/core`,
-      langPath: `${base}/lang`,
-      workerBlobURL: false,
-      logger: (message) => {
-        if (!signal.aborted && !timedOut)
-          onProgress(
-            message.status === "recognizing text"
-              ? Math.round(20 + message.progress * 80)
-              : Math.round((message.progress || 0) * 15),
-          );
-      },
+    // Own the supervisor immediately, so cancellation also stops SDK initialization.
+    worker = new Worker(new URL("./articleOcr.worker.js", import.meta.url), {
+      type: "module",
     });
-    worker = await Promise.race([startup, aborted]);
-    signal.throwIfAborted();
-    await worker.setParameters({
-      tessedit_pageseg_mode: PSM.SPARSE_TEXT,
-      preserve_interword_spaces: "1",
-      user_defined_dpi: "300",
+    const result = new Promise((resolve, reject) => {
+      worker.onmessage = ({ data }) => {
+        if (data.type === "progress") onProgress(data.progress);
+        else if (data.type === "result") resolve(data.text);
+        else if (data.type === "error") reject(new Error(data.message));
+      };
+      worker.onerror = (event) => {
+        event.preventDefault();
+        reject(new Error("Не удалось запустить распознавание."));
+      };
+      worker.postMessage({ image, base: `${location.origin}/ocr` });
     });
-    const { data } = await Promise.race([worker.recognize(image), aborted]);
+    const text = await Promise.race([result, cancelled]);
     signal.throwIfAborted();
-    return { text: data.text, candidates: extractArticleCandidates(data.text) };
+    return { text, candidates: extractArticleCandidates(text) };
   } finally {
     clearTimeout(timeout);
     signal.removeEventListener("abort", abort);
-    if (worker) await worker.terminate().catch(() => {});
+    // Terminating the supervisor also terminates the nested Tesseract worker.
+    worker?.terminate();
   }
 }

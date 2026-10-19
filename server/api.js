@@ -56,6 +56,11 @@ export function createSearchHandler({
         message:
           "Ключ API ещё не подключён. Добавьте FAVORIT_API_KEY в .env на сервере или вернитесь в деморежим.",
       });
+    const controller = new AbortController();
+    const cancelDisconnectedRequest = () => {
+      if (!res.writableEnded) controller.abort();
+    };
+    res.once("close", cancelDisconnectedRequest);
     try {
       const { data } = await request(
         "https://api.favorit-parts.ru/hs/hsprice/",
@@ -66,19 +71,24 @@ export function createSearchHandler({
             ...(brand ? { brand, analogues: "on" } : {}),
             info: "on",
           },
+          signal: controller.signal,
           timeout: 20000,
           maxRedirects: 0,
           maxContentLength: 5 * 1024 * 1024,
         },
       );
+      if (controller.signal.aborted) return;
       return res.json({ goods: parseGoods(data) });
     } catch (error) {
+      if (controller.signal.aborted) return;
       const timeout = error.code === "ECONNABORTED";
       return res.status(timeout ? 504 : 502).json({
         message: timeout
           ? "API не ответил вовремя. Повторите запрос позже."
           : "Не удалось получить ответ Favorit-parts. Проверьте ключ, доступность API и лимит запросов.",
       });
+    } finally {
+      res.off("close", cancelDisconnectedRequest);
     }
   };
 }
