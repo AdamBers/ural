@@ -2,16 +2,16 @@ import { MagnifyingGlassIcon } from "@phosphor-icons/react/dist/csr/MagnifyingGl
 import { ArrowRightIcon } from "@phosphor-icons/react/dist/csr/ArrowRight";
 import { XIcon } from "@phosphor-icons/react/dist/csr/X";
 import styles from "./SearchPartsFeature.module.scss";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import {
   fetchBrands,
   fetchOffers,
-  setNumber,
   setMode,
   selectBrand,
 } from "@/features/parts/searchParts/model/searchSlice.js";
+import { usePartSearchForm } from "@/features/parts/searchParts/model/usePartSearchForm.js";
 import BrandCard from "@/entities/parts/ui/BrandCard.jsx";
 import StatusPanel from "@/shared/ui/StatusPanel.jsx";
 import ArticlePhotoInput from "@/features/parts/searchParts/ui/ArticlePhotoInput.jsx";
@@ -28,18 +28,13 @@ function SearchPartsFeature() {
     offersStatus,
     error,
   } = useSelector((state) => state.search);
-  const searchInput = useRef(null);
-  useEffect(() => {
-    if (!number.trim()) return;
-    let request;
-    const timer = setTimeout(() => {
-      request = dispatch(fetchBrands({ number: number.trim(), mode }));
-    }, 500);
-    return () => {
-      clearTimeout(timer);
-      request?.abort();
-    };
-  }, [number, mode, dispatch]);
+  const {
+    register,
+    error: formError,
+    chooseNumber,
+    clearNumber,
+    onSubmit,
+  } = usePartSearchForm({ initialNumber: number, mode });
   useEffect(() => {
     if (!brand) return;
     const request = dispatch(
@@ -53,12 +48,15 @@ function SearchPartsFeature() {
         ? fetchOffers({ number: number.trim(), brand, mode })
         : fetchBrands({ number: number.trim(), mode }),
     );
-  const chooseExample = (value) => {
-    dispatch(setNumber(value));
-    searchInput.current?.focus();
-  };
   let brandContent;
-  if (brandsStatus === "loading" || (number.trim() && brandsStatus === "idle"))
+  if (formError)
+    brandContent = (
+      <StatusPanel title="Проверьте артикул">{formError}</StatusPanel>
+    );
+  else if (
+    brandsStatus === "loading" ||
+    (number.trim() && brandsStatus === "idle")
+  )
     brandContent = (
       <StatusPanel kind="loading" title="Ищем производителей">
         Проверяем артикул в каталоге.
@@ -137,44 +135,53 @@ function SearchPartsFeature() {
         <p className={styles.searchDescription}>
           Введите номер с упаковки детали.
         </p>
-        <label className={styles.inputLabel} htmlFor="part-number">
-          Артикул детали
-        </label>
-        <div className={styles.searchInputWrap}>
-          <MagnifyingGlassIcon size={21} />
-          <input
-            ref={searchInput}
-            id="part-number"
-            placeholder="Например, W 914/2"
-            maxLength={80}
-            autoComplete="off"
-            value={number}
-            onChange={(event) => dispatch(setNumber(event.target.value))}
-          />
-          <button
-            className={`${styles.clearButton} ${number ? "" : styles.hidden}`}
-            disabled={!number}
-            aria-label="Очистить артикул"
-            onClick={() => dispatch(setNumber(""))}
-          >
-            <XIcon weight="regular" size={18} />
-          </button>
-          <span className={styles.searchInputHint}>Автопоиск</span>
-        </div>
-        <div className={styles.examples}>
-          <span>Попробуйте:</span>
-          {["W 914/2", "01089", "7160500039S"].map((value) => (
-            <button key={value} onClick={() => chooseExample(value)}>
-              {value}
+        <form aria-label="Поиск по артикулу" onSubmit={onSubmit} noValidate>
+          <label className={styles.inputLabel} htmlFor="part-number">
+            Артикул детали
+          </label>
+          <div className={styles.searchInputWrap}>
+            <MagnifyingGlassIcon size={21} />
+            <input
+              {...register("number")}
+              id="part-number"
+              placeholder="Например, W 914/2"
+              maxLength={80}
+              autoComplete="off"
+              aria-invalid={!!formError}
+              aria-describedby="part-number-error"
+            />
+            <button
+              className={`${styles.clearButton} ${number ? "" : styles.hidden}`}
+              disabled={!number}
+              aria-label="Очистить артикул"
+              type="button"
+              onClick={clearNumber}
+            >
+              <XIcon weight="regular" size={18} />
             </button>
-          ))}
-        </div>
-        <ArticlePhotoInput
-          onDetected={(value) => {
-            dispatch(setNumber(value));
-            requestAnimationFrame(() => searchInput.current?.focus());
-          }}
-        />
+            <span className={styles.searchInputHint}>Автопоиск</span>
+          </div>
+          <p
+            id="part-number-error"
+            className={styles.fieldError}
+            aria-live="polite"
+          >
+            {formError || ""}
+          </p>
+          <div className={styles.examples}>
+            <span>Попробуйте:</span>
+            {["W 914/2", "01089", "7160500039S"].map((value) => (
+              <button
+                key={value}
+                type="button"
+                onClick={() => chooseNumber(value)}
+              >
+                {value}
+              </button>
+            ))}
+          </div>
+        </form>
+        <ArticlePhotoInput onDetected={chooseNumber} />
         <div className={styles.searchCardBottom}>
           <span className={mode === "demo" ? styles.demoStatus : ""}>
             <span className={styles.smallDot} />

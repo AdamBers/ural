@@ -102,7 +102,7 @@
   align-items: center;
   gap: 6px;
   max-width: 360px;
-  margin-top: 18px;
+  margin-top: 0;
   color: #64748b;
   font-size: 14px;
   > span {
@@ -332,4 +332,12 @@
   .stepHeading p {
     white-space: normal;
   }
+}
+
+.fieldError {
+  min-height: 22px;
+  margin: 0;
+  color: var(--accent-hover);
+  font-size: 14px;
+  line-height: 22px;
 }
