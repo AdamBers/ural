@@ -13,6 +13,7 @@
 }
 .searchCard {
   grid-area: search;
+  scroll-margin-block-start: 24px;
   min-width: 0;
   padding: 20px;
   background: #f5f7ee;
