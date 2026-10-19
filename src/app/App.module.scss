@@ -4,10 +4,14 @@
   overflow-wrap: anywhere;
 }
 .header {
-  height: 76px;
-  background: #20252c;
-  color: #fff;
-  border-bottom: 1px solid #343c47;
+  position: relative;
+  height: 88px;
+  padding-top: 10px;
+  color: #293140;
+  background:
+    radial-gradient(ellipse at 8% 0%, #ecc2c875, transparent 48%),
+    radial-gradient(ellipse at 88% 0%, #d6dfed85, transparent 50%),
+    linear-gradient(180deg, #f8f5f6, #f2f4f7);
 }
 .headerInner,
 .main,
@@ -20,8 +24,33 @@
 .headerInner {
   display: flex;
   align-items: center;
-  gap: 42px;
-  height: 100%;
+  gap: 36px;
+  position: relative;
+  width: calc(100% - 48px);
+  max-width: 1480px;
+  height: 64px;
+  padding-inline: 24px;
+  border: 1px solid #ffffffdc;
+  border-radius: 18px;
+  background: linear-gradient(125deg, #ffffffbd, #ffffff66 52%, #ffffffa6);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  backdrop-filter: blur(20px) saturate(150%);
+  box-shadow:
+    0 8px 24px #27334a09,
+    0 1px 3px #27334a08,
+    inset 0 1px 0 #fff,
+    inset 0 -1px 0 #ffffffa6;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    background: linear-gradient(180deg, #ffffff75, transparent 48%);
+  }
+  > * {
+    position: relative;
+  }
 }
 .wordmark {
   display: flex;
@@ -36,18 +65,24 @@
   font-size: 14px;
   font-weight: 450;
   letter-spacing: 1.8px;
-  color: #a7afb9;
-  border-left: 1px solid #49515c;
+  color: #697180;
+  border-left: 1px solid #c9ced64d;
   padding-left: 11px;
 }
 .currentPage {
-  align-self: stretch;
+  align-self: center;
   display: flex;
   align-items: center;
   gap: 10px;
-  border-bottom: 3px solid #e68b91;
-  padding-inline: 4px;
-  color: #e1ebf8;
+  min-height: 42px;
+  padding: 9px 16px;
+  border: 1px solid #ffffffed;
+  border-radius: 12px;
+  color: #9b303d;
+  background: linear-gradient(145deg, #ffffffd9, #f9e8eb9c);
+  box-shadow:
+    0 2px 5px #982d3a08,
+    inset 0 1px 0 #fff;
   font-size: 15px;
   font-weight: 550;
 }
@@ -62,10 +97,10 @@
   align-items: center;
   gap: 8px;
   min-height: 44px;
-  color: #bdcadb;
+  color: #5b6474;
   font-size: 14px;
   &:hover {
-    color: #fff;
+    color: var(--accent);
   }
 }
 .accountLink {
@@ -74,14 +109,19 @@
   gap: 12px;
   min-height: 44px;
   padding: 9px 15px;
-  border: 1px solid #506078;
-  border-radius: 6px;
+  border: 1px solid #ffffffed;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #ffffffd9, #ffffff66);
+  box-shadow:
+    0 2px 5px #26334606,
+    inset 0 1px 0 #fff;
   font-size: 14px;
   font-weight: 500;
-  color: #fff;
+  color: #3a4354;
   &:hover {
-    background: #303740;
-    border-color: #a86d75;
+    color: var(--accent);
+    background: #fff6f7;
+    border-color: var(--accent-border);
   }
 }
 .main {
@@ -100,7 +140,13 @@
     line-height: 1.3;
     font-weight: 650;
     letter-spacing: -0.8px;
-    color: #152338;
+    color: #752d40;
+    @supports (background-clip: text) {
+      background: linear-gradient(110deg, #303344 8%, #a33145 80%, #be4a59);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
   }
   > p {
     margin: 0 0 4px;
@@ -113,7 +159,7 @@
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.5px;
-  color: #748196;
+  color: #8b5360;
 }
 .helper {
   display: flex;
@@ -175,7 +221,8 @@
 }
 @media (max-width: bp.$phone) {
   .header {
-    height: 70px;
+    height: 84px;
+    padding-top: 8px;
   }
   .headerInner,
   .main,
@@ -183,7 +230,11 @@
     padding-inline: 18px;
   }
   .headerInner {
-    gap: 18px;
+    width: calc(100% - 24px);
+    height: 64px;
+    padding-inline: 14px;
+    border-radius: 16px;
+    gap: 12px;
   }
   .wordmark {
     font-size: 21px;

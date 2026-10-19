@@ -1,5 +1,5 @@
 {
-  "measuredAt": "2026-10-19T17:07:51.737Z",
+  "measuredAt": "2026-10-19T17:11:18.227Z",
   "environment": "Local production build, Chromium, CPU 4x slowdown, 1.6 Mbps / 150 ms RTT; delayed synthetic 7000 offers; cold browser contexts",
   "limits": {
     "LCP": 2500,
@@ -14,12 +14,12 @@
         "height": 1000
       },
       "initial": {
-        "LCP": 1036,
+        "LCP": 1064,
         "CLS": 0
       },
       "vitals": {
-        "LCP": 1036,
-        "CLS": 0.09082036651234568,
+        "LCP": 1064,
+        "CLS": 0.08520261188271604,
         "INP": 40
       },
       "shifts": [
@@ -30,7 +30,7 @@
           ]
         },
         {
-          "value": 0.09082036651234568,
+          "value": 0.08520261188271604,
           "sources": [
             "_row_fr9ak_1",
             "_row_fr9ak_1"
@@ -72,13 +72,13 @@
         "height": 1024
       },
       "initial": {
-        "LCP": 1008,
+        "LCP": 1024,
         "CLS": 0
       },
       "vitals": {
-        "LCP": 1008,
+        "LCP": 1024,
         "CLS": 0.0017452631921817858,
-        "INP": 40
+        "INP": 48
       },
       "shifts": [
         {
@@ -114,13 +114,13 @@
         "height": 844
       },
       "initial": {
-        "LCP": 1016,
+        "LCP": 1028,
         "CLS": 0
       },
       "vitals": {
-        "LCP": 1016,
+        "LCP": 1028,
         "CLS": 0.003749081120030363,
-        "INP": 40
+        "INP": 48
       },
       "shifts": [
         {
@@ -159,13 +159,13 @@
         "height": 740
       },
       "initial": {
-        "LCP": 1016,
+        "LCP": 1012,
         "CLS": 0
       },
       "vitals": {
-        "LCP": 1016,
+        "LCP": 1012,
         "CLS": 0.008292766161431701,
-        "INP": 48
+        "INP": 40
       },
       "shifts": [
         {
