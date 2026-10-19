@@ -1,3 +1,4 @@
+@use "@/shared/styles/breakpoints" as bp;
 /* golos-text-cyrillic-ext-wght-normal */
 @font-face {
   font-family: "Golos Text";
@@ -50,6 +51,7 @@
 }
 
 :root {
+  --header-height: 88px;
   --surface: #fff;
   --accent: #b63540;
   --accent-hover: #922b34;
@@ -68,6 +70,7 @@
   font-optical-sizing: auto;
   scrollbar-gutter: stable;
   scroll-behavior: smooth;
+  scroll-padding-block-start: var(--header-height);
 }
 * {
   box-sizing: border-box;
@@ -120,5 +123,11 @@ select:focus-visible,
   *::after {
     scroll-behavior: auto !important;
     transition: none !important;
+  }
+}
+
+@media (max-width: bp.$phone) {
+  :root {
+    --header-height: 84px;
   }
 }

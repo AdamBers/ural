@@ -4,14 +4,13 @@
   overflow-wrap: anywhere;
 }
 .header {
-  position: relative;
-  height: 88px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--header-height);
   padding-top: 10px;
   color: #293140;
-  background:
-    radial-gradient(ellipse at 8% 0%, #d5dde680, transparent 48%),
-    radial-gradient(ellipse at 88% 0%, #dbe2ea85, transparent 50%),
-    linear-gradient(180deg, #f3f6f9, #f2f4f7);
+  background: transparent;
 }
 .headerInner,
 .main,
@@ -32,9 +31,9 @@
   padding-inline: 24px;
   border: 1px solid #ffffffdc;
   border-radius: 18px;
-  background: linear-gradient(125deg, #ffffffbd, #ffffff66 52%, #ffffffa6);
-  -webkit-backdrop-filter: blur(20px) saturate(150%);
-  backdrop-filter: blur(20px) saturate(150%);
+  background: linear-gradient(125deg, #ffffffa6, #ffffff4d 52%, #ffffff8c);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+  backdrop-filter: blur(16px) saturate(130%);
   box-shadow:
     0 8px 24px #27334a09,
     0 1px 3px #27334a08,
@@ -46,7 +45,7 @@
     inset: 0;
     pointer-events: none;
     border-radius: inherit;
-    background: linear-gradient(180deg, #ffffff75, transparent 48%);
+    background: linear-gradient(180deg, #ffffff45, transparent 48%);
   }
   > * {
     position: relative;
@@ -221,7 +220,6 @@
 }
 @media (max-width: bp.$phone) {
   .header {
-    height: 84px;
     padding-top: 8px;
   }
   .headerInner,
