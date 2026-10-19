@@ -41,6 +41,10 @@
     "web-vitals": "^6.2.3"
   },
   "imports": {
-    "#src/*": "./src/*"
+    "#src/*": "./src/*",
+    "#server/*": "./server/*"
+  },
+  "engines": {
+    "node": ">=22.12.0"
   }
 }
