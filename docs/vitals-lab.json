@@ -1,5 +1,5 @@
 {
-  "measuredAt": "2026-10-19T16:26:26.153Z",
+  "measuredAt": "2026-10-19T16:33:01.338Z",
   "environment": "Local production build, Chromium, CPU 4x slowdown, 1.6 Mbps / 150 ms RTT; delayed synthetic 7000 offers; cold browser contexts",
   "limits": {
     "LCP": 2500,
@@ -14,50 +14,51 @@
         "height": 1000
       },
       "initial": {
-        "LCP": 1072,
+        "LCP": 1028,
         "CLS": 0
       },
       "vitals": {
-        "LCP": 1072,
-        "CLS": 0.00029859037422839507,
-        "INP": 48
+        "LCP": 1028,
+        "CLS": 0.04601217881944445,
+        "INP": 40
       },
       "shifts": [
         {
-          "value": 0.000053457031250000004,
+          "value": 0.00010281702112268519,
           "sources": [
-            "DIV"
+            "P"
           ]
         },
         {
-          "value": 0.000053457031250000004,
+          "value": 0.04601217881944445,
           "sources": [
-            "DIV"
+            "_row_quxy6_1",
+            "_row_quxy6_1"
           ]
         },
         {
-          "value": 0.0001542720389660494,
+          "value": 0.0002196850887345679,
           "sources": [
             "#text",
             "P",
             "H3",
-            "_icon_siy8p_30"
+            "_icon_kyvho_30"
           ]
         },
         {
-          "value": 0.0001443183352623457,
+          "value": 0.0002060276813271605,
           "sources": [
             "P",
             "H3",
-            "_icon_siy8p_30"
+            "_icon_kyvho_30"
           ]
         },
         {
-          "value": 0.0001401294849537037,
+          "value": 0.00014014226466049383,
           "sources": [
             "H3",
             "P",
-            "_icon_siy8p_30"
+            "_icon_kyvho_30"
           ]
         }
       ],
@@ -71,35 +72,35 @@
         "height": 1024
       },
       "initial": {
-        "LCP": 1040,
+        "LCP": 1052,
         "CLS": 0
       },
       "vitals": {
-        "LCP": 1040,
-        "CLS": 0.0008084609483679135,
-        "INP": 48
+        "LCP": 1052,
+        "CLS": 0.0008244039490818977,
+        "INP": 40
       },
       "shifts": [
         {
-          "value": 0.00040423047418395675,
+          "value": 0.00041220197454094887,
           "sources": [
             "P",
             "H3"
           ]
         },
         {
-          "value": 0.00040423047418395675,
+          "value": 0.00041220197454094887,
           "sources": [
             "P",
             "H3"
           ]
         },
         {
-          "value": 0.00036144753297170007,
+          "value": 0.00036210566759109497,
           "sources": [
             "H3",
             "P",
-            "_icon_siy8p_30"
+            "_icon_kyvho_30"
           ]
         }
       ],
@@ -113,35 +114,38 @@
         "height": 844
       },
       "initial": {
-        "LCP": 1052,
+        "LCP": 1032,
         "CLS": 0
       },
       "vitals": {
-        "LCP": 1052,
-        "CLS": 0.0023435308762387555,
+        "LCP": 1032,
+        "CLS": 0.004270384647060822,
         "INP": 40
       },
       "shifts": [
         {
-          "value": 0.0011717654381193778,
+          "value": 0.002189905771923247,
           "sources": [
             "P",
-            "H3"
+            "#text",
+            "H3",
+            "_icon_kyvho_30"
           ]
         },
         {
-          "value": 0.0011717654381193778,
+          "value": 0.0020804788751375754,
           "sources": [
             "P",
-            "H3"
+            "H3",
+            "_icon_kyvho_30"
           ]
         },
         {
-          "value": 0.001058050104848245,
+          "value": 0.00103439373755629,
           "sources": [
             "H3",
             "P",
-            "_icon_siy8p_30"
+            "_icon_kyvho_30"
           ]
         }
       ],
@@ -155,38 +159,38 @@
         "height": 740
       },
       "initial": {
-        "LCP": 1052,
+        "LCP": 1024,
         "CLS": 0
       },
       "vitals": {
-        "LCP": 1052,
-        "CLS": 0.007652968635865596,
+        "LCP": 1024,
+        "CLS": 0.002991554054054054,
         "INP": 40
       },
       "shifts": [
         {
-          "value": 0.003942901410701242,
+          "value": 0.0015464527027027027,
           "sources": [
-            "P",
             "#text",
+            "P",
             "H3",
-            "_icon_siy8p_30"
+            "_icon_kyvho_30"
           ]
         },
         {
-          "value": 0.003710067225164354,
+          "value": 0.0014451013513513515,
           "sources": [
             "P",
             "H3",
-            "_icon_siy8p_30"
+            "_icon_kyvho_30"
           ]
         },
         {
-          "value": 0.001671826492878013,
+          "value": 0.0016553426314828343,
           "sources": [
             "H3",
             "P",
-            "_icon_siy8p_30"
+            "_icon_kyvho_30"
           ]
         }
       ],

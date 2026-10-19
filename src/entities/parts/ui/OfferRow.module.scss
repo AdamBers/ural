@@ -2,18 +2,18 @@
 .row {
   > td {
     padding: 18px 16px;
-    border-bottom: 1px solid #eff0f3;
-    color: #535d6a;
+    border-bottom: 1px solid #edf0e6;
+    color: #68755c;
     overflow-wrap: anywhere;
   }
   &:last-child > td {
     border-bottom: 0;
   }
   &:hover {
-    background: #fdfdfe;
+    background: #fcfdf9;
   }
   strong {
-    color: #3f4854;
+    color: #536445;
     font-size: 12px;
     font-weight: 650;
   }
@@ -21,7 +21,7 @@
 .article {
   display: block;
   font-size: 11px;
-  color: #929aa6;
+  color: #7b896e;
   margin-top: 7px;
   overflow-wrap: anywhere;
 }
@@ -40,18 +40,18 @@
   margin-top: 8px;
 }
 .tag {
-  color: #8c95a1;
+  color: #879974;
   font-size: 10px;
-  background: #f3f4f6;
+  background: #f5f7ef;
   border-radius: 3px;
   padding: 3px 6px;
   &.original {
-    color: #4876a4;
-    background: #eaf3fc;
+    color: #8ba762;
+    background: #eff6e4;
   }
 }
 .muted {
-  color: #a2a7af;
+  color: #8d9b7f;
   font-size: 10px;
 }
 .warehouseDot {
@@ -59,16 +59,16 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #7b9d8f;
+  background: #a7bc8d;
   margin-right: 6px;
   vertical-align: middle;
 }
 .stock {
-  color: #428369;
+  color: #627d49;
   font-weight: 500;
   font-size: 12px;
   &.unavailable {
-    color: #858d99;
+    color: #8a987b;
     font-size: 11px;
   }
 }
@@ -76,7 +76,7 @@
   text-align: right;
   font-size: 16px;
   font-weight: 650;
-  color: #2e3641;
+  color: #404d37;
   letter-spacing: -0.3px;
   font-variant-numeric: tabular-nums;
 }

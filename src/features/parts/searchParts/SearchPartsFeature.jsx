@@ -1,7 +1,7 @@
 import styles from "./SearchPartsFeature.module.scss";
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Search, ArrowRight, Check, X, PackageSearch } from "lucide-react";
+import { Search, ArrowRight, Check, X } from "lucide-react";
 import {
   fetchBrands,
   fetchOffers,
@@ -123,20 +123,16 @@ function SearchPartsFeature() {
     offerContent = (
       <StatusPanel title="Здесь появятся предложения">
         {brands.length
-          ? "Выберите производителя на предыдущем шаге."
+          ? "Производитель на предыдущем шаге."
           : "Сначала укажите артикул и выберите производителя."}
       </StatusPanel>
     );
   return (
-    <>
+    <div className={styles.workspace}>
       <section className={styles.searchCard} id="part-search">
-        <div className={styles.sectionEyebrow}>
-          <PackageSearch size={18} />
-          ПОИСК ПО АРТИКУЛУ
-        </div>
-        <h2>Начнём с артикула.</h2>
+        <h2>Номер детали</h2>
         <p className={styles.searchDescription}>
-          Введите артикул — мы найдём производителей, аналоги и предложения.
+          Введите номер с упаковки детали.
         </p>
         <label className={styles.inputLabel} htmlFor="part-number">
           Артикул детали
@@ -187,53 +183,51 @@ function SearchPartsFeature() {
           </button>
         </div>
       </section>
-      <div className={styles.resultsLayout}>
-        <section className={styles.resultsSection}>
-          <div className={styles.stepHeading}>
-            <span
-              className={`${styles.stepNumber} ${brand ? styles.complete : ""}`}
-            >
-              {brand ? <Check size={18} /> : "01"}
-            </span>
-            <div>
-              <h2>Выберите производителя</h2>
-              <p>Производители для вашего артикула</p>
-            </div>
-            {brands.length > 0 && (
-              <span className={styles.countBadge}>{brands.length}</span>
-            )}
-          </div>
-          <div
-            className={styles.brandResults}
-            tabIndex={0}
-            aria-label="Список производителей"
+      <section className={`${styles.resultsSection} ${styles.brandsSection}`}>
+        <div className={styles.stepHeading}>
+          <span
+            className={`${styles.stepNumber} ${brand ? styles.complete : ""}`}
           >
-            {brandContent}
+            {brand ? <Check size={18} /> : "01"}
+          </span>
+          <div>
+            <h2>Производитель</h2>
+            <p>Производители для вашего артикула</p>
           </div>
-        </section>
-        <section className={styles.resultsSection}>
-          <div className={styles.stepHeading}>
-            <span
-              className={`${styles.stepNumber} ${brand ? styles.active : ""}`}
-            >
-              02
-            </span>
-            <div>
-              <h2>Предложения и аналоги</h2>
-              <p>
-                {brand
-                  ? `${brand} · ${number}`
-                  : "Сравните цены и наличие на складах"}
-              </p>
-            </div>
-            {offers.length > 0 && (
-              <span className={styles.countBadge}>{offers.length}</span>
-            )}
+          {brands.length > 0 && (
+            <span className={styles.countBadge}>{brands.length}</span>
+          )}
+        </div>
+        <div
+          className={styles.brandResults}
+          tabIndex={0}
+          aria-label="Список производителей"
+        >
+          {brandContent}
+        </div>
+      </section>
+      <section className={`${styles.resultsSection} ${styles.offersSection}`}>
+        <div className={styles.stepHeading}>
+          <span
+            className={`${styles.stepNumber} ${brand ? styles.active : ""}`}
+          >
+            02
+          </span>
+          <div>
+            <h2>Предложения и аналоги</h2>
+            <p>
+              {brand
+                ? `${brand} · ${number}`
+                : "Сравните цены и наличие на складах"}
+            </p>
           </div>
-          <div className={styles.offersBox}>{offerContent}</div>
-        </section>
-      </div>
-    </>
+          {offers.length > 0 && (
+            <span className={styles.countBadge}>{offers.length}</span>
+          )}
+        </div>
+        <div className={styles.offersBox}>{offerContent}</div>
+      </section>
+    </div>
   );
 }
 export default SearchPartsFeature;
