@@ -1,8 +1,15 @@
+import { MagnifyingGlassIcon } from "@phosphor-icons/react/dist/csr/MagnifyingGlass";
+import { CircleNotchIcon } from "@phosphor-icons/react/dist/csr/CircleNotch";
+import { WarningCircleIcon } from "@phosphor-icons/react/dist/csr/WarningCircle";
 import styles from "./StatusPanel.module.scss";
-import { Search, LoaderCircle, AlertCircle } from "lucide-react";
+
 function StatusPanel({ kind = "empty", title, children, onRetry }) {
   const Icon =
-    kind === "loading" ? LoaderCircle : kind === "error" ? AlertCircle : Search;
+    kind === "loading"
+      ? CircleNotchIcon
+      : kind === "error"
+        ? WarningCircleIcon
+        : MagnifyingGlassIcon;
   return (
     <div
       className={`${styles.panel} ${kind === "error" ? styles.error : ""}`}

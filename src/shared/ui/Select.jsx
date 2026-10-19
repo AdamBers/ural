@@ -1,5 +1,8 @@
+import { CheckIcon } from "@phosphor-icons/react/dist/csr/Check";
+import { CaretDownIcon } from "@phosphor-icons/react/dist/csr/CaretDown";
+import { CaretUpIcon } from "@phosphor-icons/react/dist/csr/CaretUp";
 import * as SelectPrimitive from "@radix-ui/react-select";
-import { Check, ChevronDown, ChevronUp } from "lucide-react";
+
 import styles from "./Select.module.scss";
 function Select({ value, onChange, options, label, disabled = false }) {
   return (
@@ -11,7 +14,7 @@ function Select({ value, onChange, options, label, disabled = false }) {
       <SelectPrimitive.Trigger className={styles.trigger} aria-label={label}>
         <SelectPrimitive.Value />
         <SelectPrimitive.Icon className={styles.chevron}>
-          <ChevronDown size={16} />
+          <CaretDownIcon weight="regular" size={16} />
         </SelectPrimitive.Icon>
       </SelectPrimitive.Trigger>
       <SelectPrimitive.Portal>
@@ -23,7 +26,7 @@ function Select({ value, onChange, options, label, disabled = false }) {
           collisionPadding={12}
         >
           <SelectPrimitive.ScrollUpButton className={styles.scrollButton}>
-            <ChevronUp size={16} />
+            <CaretUpIcon weight="regular" size={16} />
           </SelectPrimitive.ScrollUpButton>
           <SelectPrimitive.Viewport className={styles.viewport}>
             {options.map((option) => (
@@ -37,13 +40,13 @@ function Select({ value, onChange, options, label, disabled = false }) {
                   {option.label}
                 </SelectPrimitive.ItemText>
                 <SelectPrimitive.ItemIndicator className={styles.indicator}>
-                  <Check size={16} />
+                  <CheckIcon weight="regular" size={16} />
                 </SelectPrimitive.ItemIndicator>
               </SelectPrimitive.Item>
             ))}
           </SelectPrimitive.Viewport>
           <SelectPrimitive.ScrollDownButton className={styles.scrollButton}>
-            <ChevronDown size={16} />
+            <CaretDownIcon weight="regular" size={16} />
           </SelectPrimitive.ScrollDownButton>
         </SelectPrimitive.Content>
       </SelectPrimitive.Portal>

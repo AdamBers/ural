@@ -1,5 +1,6 @@
+import { CircleNotchIcon } from "@phosphor-icons/react/dist/csr/CircleNotch";
 import { useId } from "react";
-import { LoaderCircle } from "lucide-react";
+
 import { useArticleConfirmation } from "@/features/parts/searchParts/model/useArticleConfirmation.js";
 import styles from "./ArticlePhotoDialog.module.scss";
 function ArticlePhotoResult({ reading, progress, result, error, onConfirm }) {
@@ -11,7 +12,7 @@ function ArticlePhotoResult({ reading, progress, result, error, onConfirm }) {
   if (reading)
     return (
       <div className={styles.reading} role="status">
-        <LoaderCircle className={styles.spin} size={21} />
+        <CircleNotchIcon className={styles.spin} size={21} />
         <strong>Распознаём артикул…</strong>
         <progress
           value={progress}

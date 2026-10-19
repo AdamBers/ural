@@ -1,5 +1,7 @@
+import { ImageSquareIcon } from "@phosphor-icons/react/dist/csr/ImageSquare";
+import { XIcon } from "@phosphor-icons/react/dist/csr/X";
 import { useEffect, useId, useRef } from "react";
-import { ImagePlus, X } from "lucide-react";
+
 import { useArticlePhoto } from "@/features/parts/searchParts/model/useArticlePhoto.js";
 import ArticlePhotoResult from "@/features/parts/searchParts/ui/ArticlePhotoResult.jsx";
 import ArticleCameraCapture from "@/features/parts/searchParts/ui/ArticleCameraCapture.jsx";
@@ -46,7 +48,7 @@ function ArticlePhotoDialog({
           aria-label="Закрыть распознавание"
           onClick={onClose}
         >
-          <X size={21} />
+          <XIcon weight="regular" size={21} />
         </button>
       </header>
       <div className={styles.body}>
@@ -78,7 +80,7 @@ function ArticlePhotoDialog({
             className={styles.secondary}
             onClick={() => picker.current.click()}
           >
-            <ImagePlus size={16} />
+            <ImageSquareIcon size={16} />
             {preview ? "Другое фото" : "Выбрать фото"}
           </button>
           <span>JPG, PNG, WebP · до 10 МБ</span>

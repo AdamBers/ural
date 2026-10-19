@@ -1,5 +1,9 @@
+import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/csr/ArrowUpRight";
+import { QuestionIcon } from "@phosphor-icons/react/dist/csr/Question";
+import { ArrowRightIcon } from "@phosphor-icons/react/dist/csr/ArrowRight";
+import { SquaresFourIcon } from "@phosphor-icons/react/dist/csr/SquaresFour";
 import styles from "./App.module.scss";
-import { ArrowUpRight, CircleHelp, ArrowRight, ScanLine } from "lucide-react";
+
 import SearchPartsFeature from "@/features/parts/searchParts/SearchPartsFeature.jsx";
 function App() {
   return (
@@ -14,7 +18,7 @@ function App() {
             FAVORIT<span className={styles.brandSuffix}>PARTS</span>
           </a>
           <a className={styles.currentPage} href="#part-search">
-            <ScanLine size={15} />
+            <SquaresFourIcon size={15} />
             Каталог
           </a>
           <div className={styles.headerActions}>
@@ -25,7 +29,7 @@ function App() {
               rel="noreferrer"
               aria-label="Помощь"
             >
-              <CircleHelp size={18} />
+              <QuestionIcon size={18} />
               <span>Помощь</span>
             </a>
             <a
@@ -35,7 +39,7 @@ function App() {
               rel="noreferrer"
             >
               <span>Личный кабинет</span>
-              <ArrowUpRight size={15} />
+              <ArrowUpRightIcon weight="regular" size={15} />
             </a>
           </div>
         </div>
@@ -51,7 +55,7 @@ function App() {
         <SearchPartsFeature />
         <div className={styles.helper}>
           <span>
-            <ScanLine size={15} />
+            <SquaresFourIcon size={15} />
             Сохраняйте буквы, цифры и разделители артикула.
           </span>
           <a
@@ -60,7 +64,7 @@ function App() {
             rel="noreferrer"
           >
             Помочь с поиском?
-            <ArrowRight size={14} />
+            <ArrowRightIcon weight="regular" size={14} />
           </a>
         </div>
       </main>
@@ -72,7 +76,7 @@ function App() {
         <div>
           <a href="https://favorit-parts.ru/" target="_blank" rel="noreferrer">
             Компания
-            <ArrowUpRight size={12} />
+            <ArrowUpRightIcon weight="regular" size={12} />
           </a>
           <a
             href="https://lk.favorit-parts.ru/static/wsprice.pdf"
@@ -80,7 +84,7 @@ function App() {
             rel="noreferrer"
           >
             О сервисе
-            <ArrowUpRight size={12} />
+            <ArrowUpRightIcon weight="regular" size={12} />
           </a>
         </div>
       </footer>

@@ -1,5 +1,7 @@
+import { ImageSquareIcon } from "@phosphor-icons/react/dist/csr/ImageSquare";
+import { CameraIcon } from "@phosphor-icons/react/dist/csr/Camera";
 import { lazy, Suspense, useRef, useState } from "react";
-import { ImagePlus, Camera } from "lucide-react";
+
 import styles from "./ArticlePhotoInput.module.scss";
 const ArticlePhotoDialog = lazy(
   () => import("@/features/parts/searchParts/ui/ArticlePhotoDialog.jsx"),
@@ -15,11 +17,11 @@ function ArticlePhotoInput({ onDetected }) {
         aria-label="Найти артикул по фото"
       >
         <button type="button" onClick={() => fileInput.current.click()}>
-          <ImagePlus size={16} />
+          <ImageSquareIcon size={16} />
           Загрузить фото
         </button>
         <button type="button" onClick={() => setDialog({ camera: true })}>
-          <Camera size={16} />
+          <CameraIcon size={16} />
           Камера
         </button>
       </div>

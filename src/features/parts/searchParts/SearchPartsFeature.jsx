@@ -1,7 +1,10 @@
+import { MagnifyingGlassIcon } from "@phosphor-icons/react/dist/csr/MagnifyingGlass";
+import { ArrowRightIcon } from "@phosphor-icons/react/dist/csr/ArrowRight";
+import { XIcon } from "@phosphor-icons/react/dist/csr/X";
 import styles from "./SearchPartsFeature.module.scss";
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Search, ArrowRight, X } from "lucide-react";
+
 import {
   fetchBrands,
   fetchOffers,
@@ -138,7 +141,7 @@ function SearchPartsFeature() {
           Артикул детали
         </label>
         <div className={styles.searchInputWrap}>
-          <Search size={21} />
+          <MagnifyingGlassIcon size={21} />
           <input
             ref={searchInput}
             id="part-number"
@@ -154,7 +157,7 @@ function SearchPartsFeature() {
             aria-label="Очистить артикул"
             onClick={() => dispatch(setNumber(""))}
           >
-            <X size={18} />
+            <XIcon weight="regular" size={18} />
           </button>
           <span className={styles.searchInputHint}>Автопоиск</span>
         </div>
@@ -184,7 +187,7 @@ function SearchPartsFeature() {
             onClick={() => dispatch(setMode(mode === "demo" ? "live" : "demo"))}
           >
             {mode === "demo" ? "Вернуться к каталогу" : "Посмотреть демо"}
-            <ArrowRight size={13} />
+            <ArrowRightIcon weight="regular" size={13} />
           </button>
         </div>
       </section>

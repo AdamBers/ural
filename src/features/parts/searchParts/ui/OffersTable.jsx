@@ -1,6 +1,8 @@
+import { FadersHorizontalIcon } from "@phosphor-icons/react/dist/csr/FadersHorizontal";
+import { ArrowsDownUpIcon } from "@phosphor-icons/react/dist/csr/ArrowsDownUp";
 import styles from "./OffersTable.module.scss";
 import { useMemo, useRef, useState } from "react";
-import { SlidersHorizontal, ArrowDownUp } from "lucide-react";
+
 import OfferRow from "@/entities/parts/ui/OfferRow.jsx";
 import Select from "@/shared/ui/Select.jsx";
 import StatusPanel from "@/shared/ui/StatusPanel.jsx";
@@ -41,7 +43,7 @@ function OffersTable({ offers }) {
         </span>
         <div className={styles.tableControls}>
           <label className={styles.availability}>
-            <SlidersHorizontal size={15} />
+            <FadersHorizontalIcon size={15} />
             <input
               type="checkbox"
               checked={onlyAvailable}
@@ -53,7 +55,7 @@ function OffersTable({ offers }) {
             Только в наличии
           </label>
           <div className={styles.sort}>
-            <ArrowDownUp size={15} aria-hidden="true" />
+            <ArrowsDownUpIcon size={15} aria-hidden="true" />
             <Select
               label="Сортировка предложений"
               value={sort}

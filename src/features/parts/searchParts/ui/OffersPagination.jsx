@@ -1,5 +1,7 @@
+import { CaretLeftIcon } from "@phosphor-icons/react/dist/csr/CaretLeft";
+import { CaretRightIcon } from "@phosphor-icons/react/dist/csr/CaretRight";
 import styles from "./OffersPagination.module.scss";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+
 function OffersPagination({ page, pages, total, pageSize, onPageChange }) {
   return (
     <div className={styles.offersPagination}>
@@ -14,7 +16,7 @@ function OffersPagination({ page, pages, total, pageSize, onPageChange }) {
           disabled={page === 0}
           onClick={() => onPageChange(page - 1)}
         >
-          <ChevronLeft size={16} />
+          <CaretLeftIcon weight="regular" size={16} />
         </button>
         <span>
           Страница {page + 1} из {Math.max(1, pages)}
@@ -25,7 +27,7 @@ function OffersPagination({ page, pages, total, pageSize, onPageChange }) {
           disabled={page + 1 >= pages}
           onClick={() => onPageChange(page + 1)}
         >
-          <ChevronRight size={16} />
+          <CaretRightIcon weight="regular" size={16} />
         </button>
       </div>
     </div>

@@ -1,4 +1,5 @@
-import { Camera } from "lucide-react";
+import { CameraIcon } from "@phosphor-icons/react/dist/csr/Camera";
+
 import { useArticleCamera } from "@/features/parts/searchParts/model/useArticleCamera.js";
 import styles from "./ArticlePhotoDialog.module.scss";
 function ArticleCameraCapture({ onCapture }) {
@@ -33,7 +34,7 @@ function ArticleCameraCapture({ onCapture }) {
         onClick={capture}
         disabled={status !== "ready"}
       >
-        <Camera size={17} />
+        <CameraIcon size={17} />
         Сделать снимок
       </button>
     </div>
