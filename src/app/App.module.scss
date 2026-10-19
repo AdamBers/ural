@@ -9,9 +9,9 @@
   padding-top: 10px;
   color: #293140;
   background:
-    radial-gradient(ellipse at 8% 0%, #ecc2c875, transparent 48%),
-    radial-gradient(ellipse at 88% 0%, #d6dfed85, transparent 50%),
-    linear-gradient(180deg, #f8f5f6, #f2f4f7);
+    radial-gradient(ellipse at 8% 0%, #d5dde680, transparent 48%),
+    radial-gradient(ellipse at 88% 0%, #dbe2ea85, transparent 50%),
+    linear-gradient(180deg, #f3f6f9, #f2f4f7);
 }
 .headerInner,
 .main,
@@ -79,7 +79,7 @@
   border: 1px solid #ffffffed;
   border-radius: 12px;
   color: #9b303d;
-  background: linear-gradient(145deg, #ffffffd9, #f9e8eb9c);
+  background: linear-gradient(145deg, #ffffffd9, #edf1f6a6);
   box-shadow:
     0 2px 5px #982d3a08,
     inset 0 1px 0 #fff;
@@ -120,7 +120,7 @@
   color: #3a4354;
   &:hover {
     color: var(--accent);
-    background: #fff6f7;
+    background: #f4f7fa;
     border-color: var(--accent-border);
   }
 }
@@ -140,9 +140,9 @@
     line-height: 1.3;
     font-weight: 650;
     letter-spacing: -0.8px;
-    color: #752d40;
+    color: #263344;
     @supports (background-clip: text) {
-      background: linear-gradient(110deg, #303344 8%, #a33145 80%, #be4a59);
+      background: linear-gradient(110deg, #202b3a 8%, #415368 80%, #52667c);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
@@ -159,7 +159,7 @@
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.5px;
-  color: #8b5360;
+  color: #64748b;
 }
 .helper {
   display: flex;
