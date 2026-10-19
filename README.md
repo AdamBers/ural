@@ -2,6 +2,8 @@
 
 ## Запуск
 
+Опубликованный сайт: [ural-sage.vercel.app](https://ural-sage.vercel.app/).
+
 Требуется Node.js 22.12+ и npm.
 
 ```sh
