@@ -3,18 +3,88 @@
   min-width: 0;
   overflow-wrap: anywhere;
 }
+.rail {
+  position: fixed;
+  z-index: 5;
+  inset: 0 auto 0 0;
+  width: 76px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 25px;
+  background: #0d2036;
+  color: #7c94af;
+}
+.railMark {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  width: 44px;
+  height: 46px;
+  color: white;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -3px;
+  span {
+    color: #66abef;
+  }
+}
+.railNav {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin-top: 44px;
+  a {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    &:hover {
+      color: #c4ddf7;
+      background: #ffffff0c;
+    }
+  }
+  .railActive {
+    background: #ffffff12;
+    color: #8fc3f7;
+    border: 1px solid #b3d6fc1f;
+  }
+}
+.railHelp {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-top: auto;
+  border-radius: 12px;
+  &:hover {
+    background: #ffffff0c;
+    color: #c4ddf7;
+  }
+}
+.railLabel {
+  margin-top: 28px;
+  writing-mode: vertical-rl;
+  font-size: 8px;
+  letter-spacing: 2.5px;
+  color: #56718d;
+}
+.workspace {
+  margin-left: 76px;
+}
 .header {
-  height: 98px;
-  background: var(--surface);
+  height: 89px;
+  border-bottom: 1px solid #e4eaf0;
+  background: #ffffffcc;
 }
 .headerInner,
-.navInner,
 .main,
 .footer {
   width: 100%;
-  max-width: 1240px;
+  max-width: 1400px;
   margin-inline: auto;
-  padding-inline: 32px;
+  padding-inline: clamp(24px, 4vw, 64px);
 }
 .headerInner {
   height: 100%;
@@ -23,468 +93,287 @@
   gap: 24px;
 }
 .logo {
-  flex-shrink: 0;
   display: flex;
   align-items: center;
+  flex-shrink: 0;
   img {
-    width: 128px;
-    height: 61px;
+    width: 108px;
+    height: 52px;
     object-fit: contain;
   }
 }
 .headerDivider {
-  height: 32px;
   width: 1px;
-  background: var(--border);
+  height: 26px;
+  background: #e2e8f0;
 }
-.headerCaption {
-  font-size: 11px;
-  line-height: 1.7;
-  color: #728195;
-}
-.phone {
-  margin-left: auto;
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  color: #244567;
-  svg {
-    margin-top: 3px;
-  }
-  span {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-  strong {
-    font-size: 15px;
-    font-weight: 650;
-    letter-spacing: -0.2px;
-  }
-  small {
-    font-size: 10px;
-    color: #8a97a6;
-  }
-}
-.supportLink {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 44px;
-  padding: 10px 14px;
-  border: 1px solid #e1e9f0;
-  border-radius: 7px;
-  font-size: 11px;
-  font-weight: 550;
-  color: var(--accent);
-  &:hover {
-    background: #f0f6fc;
-  }
-}
-.navBar {
-  height: 56px;
-  border-block: 1px solid #e8edf3;
-  background: #fff;
-}
-.navInner {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  gap: 38px;
-}
-.navActive {
-  display: flex;
-  align-self: stretch;
-  align-items: center;
-  gap: 10px;
-  border-bottom: 3px solid var(--accent);
-  color: var(--accent);
+.productName {
   font-size: 12px;
-  font-weight: 650;
+  font-weight: 500;
+  color: #8592a3;
 }
-.navLinks {
+.headerActions {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 25px;
+  margin-left: auto;
+}
+.helpLink {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  color: #7b899b;
   font-size: 11px;
-  color: #78869a;
-  a {
-    min-height: 44px;
-    display: grid;
-    align-items: center;
-    &:hover {
-      color: var(--accent);
-    }
+  &:hover {
+    color: var(--accent);
   }
 }
 .accountLink {
   display: flex;
   align-items: center;
-  gap: 8px;
-  min-height: 44px;
-  margin-left: auto;
+  gap: 15px;
+  min-height: 42px;
+  padding: 9px 14px;
+  border: 1px solid #dfe6ef;
+  border-radius: 9px;
   font-size: 11px;
-  font-weight: 550;
-  color: #4b6380;
+  color: #3a536f;
+  background: #fff;
+  &:hover {
+    border-color: #9cbddd;
+    color: var(--accent);
+  }
 }
 .main {
-  padding-block: 24px 32px;
+  padding-top: 36px;
+  padding-bottom: 20px;
 }
-.breadcrumbs {
+.intro {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #9aa6b5;
-  font-size: 10px;
-  span:last-child {
-    color: #667b92;
-  }
-}
-.hero {
-  isolation: isolate;
-  position: relative;
-  display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   gap: 30px;
-  height: 350px;
-  margin-top: 23px;
-  padding: 40px 48px 64px;
-  overflow: hidden;
-  border: 1px solid #203c59;
-  border-radius: 18px;
-  color: #fff;
-  background: #0c243c;
-  &::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    inset: 0;
-    background: linear-gradient(
-      90deg,
-      #0c243cf5 0%,
-      #0c243cdd 42%,
-      #0c243c75 100%
-    );
-  }
-}
-.heroImage {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 48%;
-  opacity: 0.65;
-}
-.heroCopy {
-  min-width: 0;
+  padding-block: 9px 36px;
   h1 {
-    margin: 19px 0 16px;
-    font-size: clamp(36px, 3.7vw, 48px);
-    font-weight: 750;
-    letter-spacing: -1.8px;
-    line-height: 1.15;
-    span {
+    margin: 20px 0 0;
+    font-size: clamp(36px, 4.7vw, 66px);
+    letter-spacing: -2.7px;
+    font-weight: 650;
+    line-height: 1.06;
+    > span {
       display: block;
       font-weight: 450;
-      color: #c5def6;
+      color: #8b9baa;
     }
-  }
-  p {
-    max-width: 480px;
-    margin: 0;
-    color: #9fb8d1;
-    font-size: 12px;
-    line-height: 1.9;
   }
 }
 .eyebrow {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: #b7d4ef;
-  font-size: 8px;
+  gap: 9px;
+  font-size: 9px;
   letter-spacing: 1.5px;
   font-weight: 550;
-  span {
+  color: #4d739c;
+  > span:first-child {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: #79b8ef;
-    box-shadow: 0 0 0 4px #79b8ef16;
+    background: #659ad1;
   }
 }
-.heroAside {
+.eyebrowDivider {
+  margin-inline: 2px;
+  color: #bdc9d5;
+}
+.period {
+  color: #367bbd;
+}
+.introAside {
   flex-shrink: 0;
-  width: 282px;
-  padding: 21px;
-  border: 1px solid #99c4e82b;
-  border-radius: 12px;
-  background: #0c2946b3;
+  padding-bottom: 3px;
+  max-width: 260px;
+  p {
+    font-size: 11px;
+    line-height: 1.95;
+    margin: 10px 0 13px;
+    color: #8b98a8;
+  }
 }
-.asideEyebrow {
-  color: #83a8cb;
-  font-size: 8px;
-  letter-spacing: 1.3px;
+.asideNumber {
+  font-family: ui-monospace, monospace;
+  color: #9ba9b8;
+  font-size: 10px;
+  letter-spacing: 1px;
 }
-.heroStep {
+.asideCaption {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-top: 17px;
-  > span:first-child {
-    display: grid;
-    place-items: center;
-    width: 40px;
-    height: 40px;
-    border: 1px solid #80b6e633;
-    border-radius: 8px;
-    color: #9bc9f2;
-    background: #537fa320;
-  }
-  > div {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-  b {
-    font-size: 12px;
-    font-weight: 550;
-  }
-  small {
-    font-size: 9px;
-    color: #88a8c6;
-  }
-}
-.stepIndex {
-  margin-left: auto;
-  color: #5f83a5;
-  font-size: 9px;
-}
-.connector {
-  display: block;
-  color: #6c90b1;
-  margin: 8px 0 -9px 12px;
-}
-.asideFooter {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: 18px;
-  padding-top: 13px;
-  border-top: 1px solid #8eb2d421;
-  color: #a5c5e1;
-  font-size: 9px;
+  gap: 9px;
+  font-size: 10px;
+  color: #55779a;
 }
 .helpStrip {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  margin-top: 28px;
-  padding: 22px 24px;
-  border: 1px solid #e4ebf2;
-  border-radius: 10px;
-  background: #eef3f8;
-  > div {
-    display: flex;
-    gap: 13px;
-    align-items: center;
-    > span:last-child {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-      font-size: 11px;
-      line-height: 1.6;
-      color: #7e90a3;
-    }
-  }
-  strong {
-    font-size: 12px;
-    font-weight: 600;
-    color: #4b6380;
-  }
-  > a {
+  gap: 20px;
+  padding: 25px 2px 18px;
+  color: #94a1b0;
+  font-size: 11px;
+  > span {
     display: flex;
     align-items: center;
-    gap: 8px;
-    min-height: 44px;
-    font-size: 11px;
-    color: var(--accent);
-    font-weight: 550;
+    gap: 9px;
   }
-}
-.helpIcon {
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  width: 42px;
-  height: 42px;
-  color: #6994bc;
-  border: 1px solid #d9e5ef;
-  border-radius: 10px;
-  background: #fff;
-}
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  padding-block: 24px;
-  border-top: 1px solid #e1e8ef;
-  color: #8c9bad;
-  font-size: 10px;
   a {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 7px;
+    min-height: 44px;
+    color: #6683a1;
+    font-size: 10px;
+  }
+}
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  min-height: 70px;
+  border-top: 1px solid #e5ebf1;
+  color: #a0acba;
+  font-size: 10px;
+  > span {
+    margin-right: auto;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    gap: 4px;
     min-height: 32px;
   }
 }
-.footerDot {
-  margin-inline: 10px;
-  color: #c4ced9;
+.footerDivider {
+  padding-inline: 10px;
+  color: #bbc6d3;
 }
 @media (max-width: bp.$tablet) {
-  .headerInner {
-    gap: 18px;
+  .rail {
+    width: 64px;
   }
-  .phone {
+  .workspace {
+    margin-left: 64px;
+  }
+  .headerInner,
+  .main,
+  .footer {
+    padding-inline: 28px;
+  }
+  .intro h1 {
+    font-size: 48px;
+  }
+  .introAside {
     display: none;
   }
-  .supportLink {
-    margin-left: auto;
-  }
-  .hero {
-    padding-inline: 32px;
-  }
-  .heroAside {
-    width: 250px;
-    padding: 17px;
-  }
-  .heroCopy h1 {
-    font-size: 38px;
-  }
-  .navInner {
-    gap: 25px;
-  }
-  .navLinks {
-    gap: 20px;
-  }
-  .heroCopy p {
-    max-width: 330px;
+  .headerActions {
+    gap: 18px;
   }
 }
 @media (max-width: bp.$phone) {
+  .rail {
+    display: none;
+  }
+  .workspace {
+    margin-left: 0;
+  }
+  .header {
+    height: 77px;
+  }
   .headerInner,
-  .navInner,
   .main,
   .footer {
     padding-inline: 20px;
   }
-  .header {
-    height: 81px;
+  .headerInner {
+    gap: 14px;
   }
   .logo img {
-    width: 112px;
-    height: 54px;
+    width: 95px;
+    height: 46px;
   }
-  .headerCaption,
-  .headerDivider,
-  .navLinks {
+  .productName,
+  .headerDivider {
     display: none;
   }
-  .supportLink {
-    padding: 8px 10px;
-    font-size: 10px;
-    border: 0;
+  .headerActions {
+    gap: 12px;
   }
-  .navBar {
-    height: 51px;
-  }
-  .navInner {
-    gap: 10px;
-  }
-  .navActive {
-    font-size: 11px;
-    gap: 7px;
+  .helpLink {
+    min-width: 28px;
+    > span {
+      display: none;
+    }
   }
   .accountLink {
+    padding: 8px 11px;
+    gap: 10px;
+    min-height: 44px;
     font-size: 10px;
-    gap: 6px;
   }
   .main {
-    padding-top: 21px;
+    padding-top: 28px;
   }
-  .hero {
-    height: 318px;
-    margin-top: 20px;
-    border-radius: 13px;
-    padding: 28px 25px 50px;
+  .intro {
+    padding-block: 4px 28px;
   }
-  .heroAside {
-    display: none;
-  }
-  .heroCopy h1 {
-    font-size: 35px;
-    letter-spacing: -1.2px;
-    margin-block: 18px;
-  }
-  .heroCopy p {
-    font-size: 11px;
-    max-width: 310px;
-  }
-  .heroCopy p br {
-    display: none;
+  .intro h1 {
+    margin-top: 18px;
+    font-size: clamp(34px, 8.6vw, 46px);
+    letter-spacing: -1.7px;
+    line-height: 1.1;
   }
   .eyebrow {
-    font-size: 7px;
-    letter-spacing: 1px;
+    font-size: 8px;
+    letter-spacing: 1.2px;
   }
   .helpStrip {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    padding: 17px;
-    > a {
-      margin-left: 55px;
-      font-size: 10px;
+    flex-wrap: wrap;
+    padding-top: 18px;
+    gap: 5px;
+    font-size: 10px;
+    line-height: 1.7;
+    a {
+      margin-left: 26px;
     }
   }
   .footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 2px;
+    padding-block: 15px;
     font-size: 9px;
-    padding-top: 20px;
+    > span {
+      width: 100%;
+    }
   }
 }
 @media (max-width: bp.$compact) {
   .headerInner,
-  .navInner,
   .main,
   .footer {
     padding-inline: 14px;
   }
-  .hero {
-    padding-inline: 20px;
-    height: 326px;
-  }
-  .heroCopy h1 {
-    font-size: 30px;
+  .headerActions {
+    gap: 8px;
   }
   .accountLink {
     font-size: 9px;
+    gap: 7px;
+    padding-inline: 9px;
   }
-  .navActive {
-    font-size: 10px;
-  }
-  .supportLink {
-    font-size: 9px;
-  }
-  .heroCopy p {
-    max-width: 250px;
+  .intro h1 {
+    font-size: 32px;
+    letter-spacing: -1.4px;
   }
 }

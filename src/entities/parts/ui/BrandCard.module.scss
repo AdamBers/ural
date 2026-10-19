@@ -8,7 +8,7 @@
   padding: 16px;
   text-align: left;
   border: 1px solid #e0e3e9;
-  border-radius: 9px;
+  border-radius: 12px;
   background: var(--surface);
   transition:
     border-color 0.15s,
@@ -23,7 +23,7 @@
   }
   &.selected {
     border-color: var(--accent);
-    background: #f2f8fe;
+    background: #f1f7fd;
     box-shadow: 0 0 0 1px #035aa418;
     > svg {
       color: var(--accent);
@@ -98,5 +98,24 @@
     > span {
       font-size: 10px;
     }
+  }
+}
+
+@media (min-width: 1280px) {
+  .card {
+    min-height: 82px;
+    padding: 13px;
+    gap: 10px;
+  }
+  .copy strong {
+    font-size: 11px;
+  }
+  .copy > span {
+    font-size: 10px;
+  }
+  .monogram {
+    width: 32px;
+    height: 32px;
+    font-size: 19px;
   }
 }

@@ -129,12 +129,12 @@ function SearchPartsFeature() {
     );
   return (
     <>
-      <section className={styles.searchCard}>
+      <section className={styles.searchCard} id="part-search">
         <div className={styles.sectionEyebrow}>
           <PackageSearch size={18} />
           ПОИСК ПО АРТИКУЛУ
         </div>
-        <h2>Найдём именно то, что нужно.</h2>
+        <h2>Начнём с артикула.</h2>
         <p className={styles.searchDescription}>
           Введите артикул — мы найдём производителей, аналоги и предложения.
         </p>
@@ -187,50 +187,52 @@ function SearchPartsFeature() {
           </button>
         </div>
       </section>
-      <section className={styles.resultsSection}>
-        <div className={styles.stepHeading}>
-          <span
-            className={`${styles.stepNumber} ${brand ? styles.complete : ""}`}
-          >
-            {brand ? <Check size={18} /> : "01"}
-          </span>
-          <div>
-            <h2>Выберите производителя</h2>
-            <p>Один артикул может встречаться у разных брендов</p>
+      <div className={styles.resultsLayout}>
+        <section className={styles.resultsSection}>
+          <div className={styles.stepHeading}>
+            <span
+              className={`${styles.stepNumber} ${brand ? styles.complete : ""}`}
+            >
+              {brand ? <Check size={18} /> : "01"}
+            </span>
+            <div>
+              <h2>Выберите производителя</h2>
+              <p>Производители для вашего артикула</p>
+            </div>
+            {brands.length > 0 && (
+              <span className={styles.countBadge}>{brands.length}</span>
+            )}
           </div>
-          {brands.length > 0 && (
-            <span className={styles.countBadge}>{brands.length}</span>
-          )}
-        </div>
-        <div
-          className={styles.brandResults}
-          tabIndex={0}
-          aria-label="Список производителей"
-        >
-          {brandContent}
-        </div>
-      </section>
-      <section className={styles.resultsSection}>
-        <div className={styles.stepHeading}>
-          <span
-            className={`${styles.stepNumber} ${brand ? styles.active : ""}`}
+          <div
+            className={styles.brandResults}
+            tabIndex={0}
+            aria-label="Список производителей"
           >
-            02
-          </span>
-          <div>
-            <h2>Предложения и аналоги</h2>
-            <p>
-              {brand
-                ? `${brand} · ${number}`
-                : "Сравните цены и наличие на складах"}
-            </p>
+            {brandContent}
           </div>
-          {offers.length > 0 && (
-            <span className={styles.countBadge}>{offers.length}</span>
-          )}
-        </div>
-        <div className={styles.offersBox}>{offerContent}</div>
-      </section>
+        </section>
+        <section className={styles.resultsSection}>
+          <div className={styles.stepHeading}>
+            <span
+              className={`${styles.stepNumber} ${brand ? styles.active : ""}`}
+            >
+              02
+            </span>
+            <div>
+              <h2>Предложения и аналоги</h2>
+              <p>
+                {brand
+                  ? `${brand} · ${number}`
+                  : "Сравните цены и наличие на складах"}
+              </p>
+            </div>
+            {offers.length > 0 && (
+              <span className={styles.countBadge}>{offers.length}</span>
+            )}
+          </div>
+          <div className={styles.offersBox}>{offerContent}</div>
+        </section>
+      </div>
     </>
   );
 }

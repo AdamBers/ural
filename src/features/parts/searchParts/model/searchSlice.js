@@ -37,17 +37,17 @@ const slice = createSlice({
   name: "search",
   initialState,
   reducers: {
-    setNumber: (state, { payload }) => ({
-      ...initialState,
-      mode: state.mode,
-      number: payload,
-    }),
+    setNumber: (state, { payload }) => {
+      if (state.number === payload) return;
+      return { ...initialState, mode: state.mode, number: payload };
+    },
     setMode: (state, { payload }) => ({
       ...initialState,
       mode: payload,
       number: state.number,
     }),
     selectBrand: (state, { payload }) => {
+      if (state.brand === payload) return;
       state.brand = payload;
       state.offers = [];
       state.offersStatus = "idle";

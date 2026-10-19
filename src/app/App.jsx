@@ -1,190 +1,151 @@
 import styles from "./App.module.scss";
 import {
   ArrowUpRight,
-  ArrowRight,
+  Search,
+  LibraryBig,
   LifeBuoy,
-  Boxes,
-  ChevronRight,
-  Phone,
-  ArrowDown,
-  ScanLine,
-  Layers3,
-  ExternalLink,
+  LogIn,
+  ArrowRight,
+  CircleHelp,
 } from "lucide-react";
 import SearchPartsFeature from "@/features/parts/searchParts/SearchPartsFeature.jsx";
 function App() {
   return (
     <div className={styles.app}>
-      <header className={styles.header}>
-        <div className={styles.headerInner}>
-          <a className={styles.logo} href="/" aria-label="FAVORIT — главная">
-            <img
-              src="/brand/favorit-logo-blue.svg"
-              alt="FAVORIT"
-              width="148"
-              height="70"
-            />
-          </a>
-          <span className={styles.headerDivider} />
-          <span className={styles.headerCaption}>
-            Международный оптовый
-            <br />
-            гипермаркет автозапчастей
-          </span>
-          <a className={styles.phone} href="tel:88007778548">
-            <Phone size={16} />
-            <span>
-              <strong>8 800 777-85-48</strong>
-              <small>Бесплатно по России</small>
-            </span>
+      <aside className={styles.rail} aria-label="Быстрые ссылки">
+        <a className={styles.railMark} href="/" aria-label="FAVORIT — начало">
+          F<span>.</span>
+        </a>
+        <nav className={styles.railNav} aria-label="Инструменты">
+          <a
+            className={styles.railActive}
+            href="#part-search"
+            aria-label="Поиск запчастей"
+            title="Поиск запчастей"
+          >
+            <Search size={21} />
           </a>
           <a
-            className={styles.supportLink}
-            href="https://favorit-parts.ru/"
+            href="https://favorit-parts.ru/brands/"
             target="_blank"
             rel="noreferrer"
+            aria-label="Каталог брендов"
+            title="Каталог брендов"
           >
-            Сайт компании
-            <ArrowUpRight size={16} />
+            <LibraryBig size={21} />
           </a>
-        </div>
-      </header>
-      <nav className={styles.navBar} aria-label="Основная навигация">
-        <div className={styles.navInner}>
-          <span className={styles.navActive}>
-            <Boxes size={17} />
-            Подбор запчастей
-          </span>
-          <div className={styles.navLinks}>
-            <a
-              href="https://favorit-parts.ru/brands/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Бренды
-            </a>
-            <a
-              href="https://favorit-parts.ru/servis/dostavka/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Доставка
-            </a>
-            <a
-              href="https://favorit-parts.ru/company/o-nas/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              О компании
-            </a>
-          </div>
-          <a
-            className={styles.accountLink}
-            href="https://lk.favorit-parts.ru/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Личный кабинет
-            <ExternalLink size={14} />
-          </a>
-        </div>
-      </nav>
-      <main className={styles.main}>
-        <div className={styles.breadcrumbs}>
-          <span>FAVORIT</span>
-          <ChevronRight size={12} />
-          <span>Подбор запчастей</span>
-        </div>
-        <section className={styles.hero} aria-labelledby="hero-title">
-          <img
-            className={styles.heroImage}
-            src="/brand/warehouse.webp"
-            alt=""
-            width="1400"
-            height="930"
-            fetchPriority="high"
-          />
-          <div className={styles.heroCopy}>
-            <div className={styles.eyebrow}>
-              <span />
-              ЗАПЧАСТИ. АНАЛОГИ. ТОЧНЫЙ ВЫБОР.
-            </div>
-            <h1 id="hero-title">
-              Ваш фаворит<span>в выборе запчастей.</span>
-            </h1>
-            <p>
-              Нужная деталь начинается с точного поиска.
-              <br />
-              Сравните производителей, цены и наличие — в одном месте.
-            </p>
-          </div>
-          <div className={styles.heroAside} aria-hidden="true">
-            <span className={styles.asideEyebrow}>
-              ВСЁ НАЧИНАЕТСЯ С АРТИКУЛА
-            </span>
-            <div className={styles.heroStep}>
-              <span>
-                <ScanLine size={21} />
-              </span>
-              <div>
-                <b>Найдите деталь</b>
-                <small>Введите номер с упаковки</small>
-              </div>
-              <span className={styles.stepIndex}>01</span>
-            </div>
-            <ArrowDown className={styles.connector} size={18} />
-            <div className={styles.heroStep}>
-              <span>
-                <Layers3 size={21} />
-              </span>
-              <div>
-                <b>Выберите лучшее</b>
-                <small>Сравните предложения складов</small>
-              </div>
-              <span className={styles.stepIndex}>02</span>
-            </div>
-            <div className={styles.asideFooter}>
-              Один поиск. Больше возможностей.
-              <ArrowRight size={15} />
-            </div>
-          </div>
-        </section>
-        <SearchPartsFeature />
-        <div className={styles.helpStrip}>
-          <div>
-            <span className={styles.helpIcon}>
-              <LifeBuoy size={21} />
-            </span>
-            <span>
-              <strong>Нужна небольшая подсказка?</strong>
-              <span>Артикул обычно указан на упаковке или корпусе детали.</span>
-            </span>
-          </div>
-          <a
-            href="https://favorit-parts.ru/company/contacts/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Связаться с FAVORIT
-            <ArrowUpRight size={16} />
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <span>
-          © {new Date().getFullYear()} ООО «ЮРАЛ»
-          <span className={styles.footerDot}>/</span>FAVORIT
-        </span>
-        <span>Ваш фаворит в выборе автозапчастей</span>
+        </nav>
         <a
-          href="https://lk.favorit-parts.ru/static/wsprice.pdf"
+          className={styles.railHelp}
+          href="https://favorit-parts.ru/company/contacts/"
           target="_blank"
           rel="noreferrer"
+          aria-label="Контакты FAVORIT"
+          title="Контакты FAVORIT"
         >
-          Документация сервиса
-          <ArrowUpRight size={12} />
+          <CircleHelp size={21} />
         </a>
-      </footer>
+        <span className={styles.railLabel}>FAVORIT PARTS</span>
+      </aside>
+      <div className={styles.workspace}>
+        <header className={styles.header}>
+          <div className={styles.headerInner}>
+            <a className={styles.logo} href="/" aria-label="FAVORIT — главная">
+              <img
+                src="/brand/favorit-logo-blue.svg"
+                alt="FAVORIT"
+                width="148"
+                height="70"
+              />
+            </a>
+            <span className={styles.headerDivider} />
+            <span className={styles.productName}>Подбор запчастей</span>
+            <div className={styles.headerActions}>
+              <a
+                className={styles.helpLink}
+                href="https://favorit-parts.ru/company/contacts/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <LifeBuoy size={17} />
+                <span>Помощь</span>
+              </a>
+              <a
+                className={styles.accountLink}
+                href="https://lk.favorit-parts.ru/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>Личный кабинет</span>
+                <LogIn size={15} />
+              </a>
+            </div>
+          </div>
+        </header>
+        <main className={styles.main}>
+          <section className={styles.intro} aria-labelledby="page-title">
+            <div>
+              <div className={styles.eyebrow}>
+                <span />
+                FAVORIT<span className={styles.eyebrowDivider}>/</span>КАТАЛОГ
+              </div>
+              <h1 id="page-title">
+                Точный поиск
+                <span>
+                  Свободный выбор<span className={styles.period}>.</span>
+                </span>
+              </h1>
+            </div>
+            <div className={styles.introAside}>
+              <span className={styles.asideNumber}>01 — 02</span>
+              <p>
+                От артикула до подходящей детали.
+                <br />
+                Сравнивайте бренды, цены и наличие.
+                <br />
+                Принимайте решение на своих условиях.
+              </p>
+              <span className={styles.asideCaption}>
+                Всё для уверенного выбора
+                <ArrowRight size={15} />
+              </span>
+            </div>
+          </section>
+          <SearchPartsFeature />
+          <div className={styles.helpStrip}>
+            <span>
+              <LifeBuoy size={17} />
+              <span>Артикул ищите на упаковке или корпусе детали.</span>
+            </span>
+            <a
+              href="https://favorit-parts.ru/company/contacts/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Нужна помощь?
+              <ArrowUpRight size={15} />
+            </a>
+          </div>
+        </main>
+        <footer className={styles.footer}>
+          <span>
+            © {new Date().getFullYear()} ООО «ЮРАЛ»
+            <span className={styles.footerDivider}>·</span>FAVORIT
+          </span>
+          <a href="https://favorit-parts.ru/" target="_blank" rel="noreferrer">
+            О компании
+            <ArrowUpRight size={12} />
+          </a>
+          <a
+            href="https://lk.favorit-parts.ru/static/wsprice.pdf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            О сервисе
+            <ArrowUpRight size={12} />
+          </a>
+        </footer>
+      </div>
     </div>
   );
 }

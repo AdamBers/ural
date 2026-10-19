@@ -111,3 +111,19 @@ test("по умолчанию отправляет реальный запрос
   await expect(page.getByRole("button", { name: /MANN-FILTER/ })).toBeVisible();
   expect(modes).toEqual(["live", "demo"]);
 });
+
+test("повторный клик по текущему артикулу и производителю сохраняет результаты", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const example = page.getByRole("button", { name: "W 914/2", exact: true });
+  await example.click();
+  const brand = page.getByRole("button", { name: /MANN-FILTER/ });
+  await brand.click();
+  await expect(page.getByRole("table")).toBeVisible();
+  await example.click();
+  await expect(page.getByRole("table")).toBeVisible();
+  await brand.click();
+  await expect(page.getByRole("table")).toBeVisible();
+  await expect(page.locator("tbody tr")).toHaveCount(8);
+});

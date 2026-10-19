@@ -59,6 +59,9 @@ for (const viewport of devices) {
       await expect(
         page.getByRole("button", { name: "Следующая страница" }),
       ).toBeVisible();
+      await page.evaluate(() =>
+        window.scrollTo({ top: 0, left: 0, behavior: "instant" }),
+      );
       await page.screenshot({
         path: `test-results/responsive-${viewport.width}.png`,
         fullPage: true,

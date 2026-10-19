@@ -3,12 +3,12 @@
 .searchCard {
   position: relative;
   z-index: 1;
-  margin: -28px 24px 0;
+  margin: 0;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 13px;
+  border-radius: 18px;
   padding: 27px 30px 0;
-  box-shadow: 0 12px 40px #183a5c09;
+  box-shadow: 0 8px 32px #183a5c04;
   h2 {
     font-size: 23px;
     font-weight: 650;
@@ -39,15 +39,15 @@
   margin-bottom: 9px;
 }
 .searchInputWrap {
-  height: 54px;
+  height: 64px;
   border: 1px solid #d6d9df;
-  border-radius: 7px;
+  border-radius: 11px;
   display: flex;
   align-items: center;
   gap: 12px;
   padding-inline: 16px;
-  max-width: 700px;
-  background: #fdfdfd;
+  max-width: none;
+  background: #f8fafc;
   &:focus-within {
     border-color: var(--accent);
     box-shadow: 0 0 0 3px #035aa412;
@@ -62,7 +62,7 @@
     outline: none;
     border: 0;
     background: none;
-    font-size: 16px;
+    font-size: 18px;
     letter-spacing: 0.2px;
     &::placeholder {
       color: #a5a9b1;
@@ -106,9 +106,10 @@
     min-height: 36px;
     padding: 6px 10px;
     border: 0;
-    background: #f3f4f6;
+    background: #fff;
+    border: 1px solid #e3e9f0;
     color: #727985;
-    border-radius: 4px;
+    border-radius: 20px;
     font-size: 11px;
     &:hover {
       background: #e9f3fc;
@@ -224,7 +225,7 @@
   min-width: 0;
   border: 1px solid var(--border);
   background: var(--surface);
-  border-radius: 10px;
+  border-radius: 16px;
   overflow: hidden;
 }
 @media (max-width: bp.$tablet) {
@@ -327,7 +328,7 @@
 }
 @media (max-width: bp.$phone) {
   .searchCard {
-    margin-inline: 10px;
+    margin-inline: 0;
     padding-inline: 17px;
     border-radius: 11px;
     h2 {
@@ -346,7 +347,7 @@
 }
 @media (max-width: bp.$compact) {
   .searchCard {
-    margin-inline: 8px;
+    margin-inline: 0;
     padding-inline: 13px;
     h2 {
       font-size: 18px;
@@ -360,5 +361,55 @@
   .modeSwitch {
     margin: 0;
     padding-left: 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .resultsLayout {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    gap: 28px;
+  }
+  .brandGrid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .brandResults {
+    height: 660px;
+  }
+  .stepHeading {
+    min-height: 64px;
+    gap: 9px;
+    h2 {
+      font-size: 15px;
+    }
+    p {
+      font-size: 10px;
+    }
+  }
+  .stepNumber {
+    width: 31px;
+    height: 31px;
+    font-size: 11px;
+  }
+  .countBadge {
+    font-size: 10px;
+    min-width: 26px;
+    padding-inline: 6px;
+  }
+}
+@media (max-width: 767px) {
+  .searchInputWrap {
+    height: 60px;
+    input {
+      font-size: 16px;
+    }
+  }
+  .searchCard {
+    padding-top: 22px;
+    border-radius: 15px;
+  }
+  .searchCardBottom {
+    margin-top: 20px;
   }
 }
