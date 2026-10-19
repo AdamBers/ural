@@ -11,6 +11,7 @@ import {
 } from "@/features/parts/searchParts/model/searchSlice.js";
 import BrandCard from "@/entities/parts/ui/BrandCard.jsx";
 import StatusPanel from "@/shared/ui/StatusPanel.jsx";
+import ArticlePhotoInput from "@/features/parts/searchParts/ui/ArticlePhotoInput.jsx";
 import OffersTable from "@/features/parts/searchParts/ui/OffersTable.jsx";
 function SearchPartsFeature() {
   const dispatch = useDispatch();
@@ -166,6 +167,12 @@ function SearchPartsFeature() {
             </button>
           ))}
         </div>
+        <ArticlePhotoInput
+          onDetected={(value) => {
+            dispatch(setNumber(value));
+            requestAnimationFrame(() => searchInput.current?.focus());
+          }}
+        />
         <div className={styles.searchCardBottom}>
           <span className={mode === "demo" ? styles.demoStatus : ""}>
             <span className={styles.smallDot} />

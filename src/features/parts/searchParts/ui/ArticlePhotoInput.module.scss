@@ -1,0 +1,36 @@
+.root {
+  margin-top: 14px;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 42px;
+    padding: 8px 10px;
+    border: 1px solid #dce3ec;
+    border-radius: 5px;
+    background: #fff;
+    color: #596e87;
+    font-size: 14px;
+    &:hover {
+      border-color: var(--accent-border);
+      color: var(--accent);
+      background: var(--accent-soft);
+    }
+  }
+}
+.opening {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: #18263870;
+  color: #fff;
+  font-size: 16px;
+}

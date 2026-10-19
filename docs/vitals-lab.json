@@ -1,5 +1,5 @@
 {
-  "measuredAt": "2026-10-19T16:48:57.070Z",
+  "measuredAt": "2026-10-19T17:07:51.737Z",
   "environment": "Local production build, Chromium, CPU 4x slowdown, 1.6 Mbps / 150 ms RTT; delayed synthetic 7000 offers; cold browser contexts",
   "limits": {
     "LCP": 2500,
@@ -14,26 +14,26 @@
         "height": 1000
       },
       "initial": {
-        "LCP": 1020,
+        "LCP": 1036,
         "CLS": 0
       },
       "vitals": {
-        "LCP": 1020,
-        "CLS": 0.06741305555555555,
+        "LCP": 1036,
+        "CLS": 0.09082036651234568,
         "INP": 40
       },
       "shifts": [
         {
-          "value": 0.000201474609375,
+          "value": 0.000025667860243055555,
           "sources": [
             "P"
           ]
         },
         {
-          "value": 0.06741305555555555,
+          "value": 0.09082036651234568,
           "sources": [
-            "_row_luytf_1",
-            "_row_luytf_1"
+            "_row_fr9ak_1",
+            "_row_fr9ak_1"
           ]
         },
         {
@@ -114,17 +114,17 @@
         "height": 844
       },
       "initial": {
-        "LCP": 1028,
+        "LCP": 1016,
         "CLS": 0
       },
       "vitals": {
-        "LCP": 1028,
-        "CLS": 0.0037929837129582755,
-        "INP": 32
+        "LCP": 1016,
+        "CLS": 0.003749081120030363,
+        "INP": 40
       },
       "shifts": [
         {
-          "value": 0.0019560858704535285,
+          "value": 0.0019341345739895721,
           "sources": [
             "#text",
             "P",
@@ -133,7 +133,7 @@
           ]
         },
         {
-          "value": 0.001836897842504747,
+          "value": 0.001814946546040791,
           "sources": [
             "P",
             "H3",
@@ -164,12 +164,18 @@
       },
       "vitals": {
         "LCP": 1016,
-        "CLS": 0.004159789682392486,
-        "INP": 40
+        "CLS": 0.008292766161431701,
+        "INP": 48
       },
       "shifts": [
         {
-          "value": 0.0021514209555047025,
+          "value": 0.008292766161431701,
+          "sources": [
+            "_brandResults_bfnv9_259"
+          ]
+        },
+        {
+          "value": 0.00217266234905725,
           "sources": [
             "#text",
             "P",
@@ -178,7 +184,7 @@
           ]
         },
         {
-          "value": 0.0020083687268877834,
+          "value": 0.0020296101204403307,
           "sources": [
             "P",
             "H3",
@@ -186,7 +192,7 @@
           ]
         },
         {
-          "value": 0.0034810445937385865,
+          "value": 0.003544413798564189,
           "sources": [
             "H3",
             "P",
