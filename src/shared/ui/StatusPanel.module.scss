@@ -1,0 +1,64 @@
+.panel {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  padding: 16px;
+  text-align: center;
+  color: #8b939f;
+  background: #ffffff80;
+  h3 {
+    color: #697482;
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: 550;
+    margin: 0;
+  }
+  p {
+    font-size: 11px;
+    line-height: 1.7;
+    margin: 0;
+    max-width: 430px;
+  }
+}
+.icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  background: #f0f2f5;
+  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 3px;
+  color: #a1a9b5;
+}
+.error .icon {
+  background: #fff0f0;
+  color: var(--accent);
+}
+.retry {
+  min-height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 9px 14px;
+  background: var(--surface);
+  font-size: 12px;
+}
+.spin {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .spin {
+    animation: none;
+  }
+}

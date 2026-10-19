@@ -27,8 +27,13 @@
     "@playwright/test": "^1.56.0",
     "@vitejs/plugin-react": "^5.0.0",
     "concurrently": "^9.2.0",
+    "prettier": "^3.9.10",
+    "sass": "^1.105.2",
     "vite": "^7.1.0",
     "vitest": "^4.1.11",
     "web-vitals": "^6.2.3"
+  },
+  "imports": {
+    "#src/*": "./src/*"
   }
 }

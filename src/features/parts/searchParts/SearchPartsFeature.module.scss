@@ -1,0 +1,366 @@
+@use "@/shared/styles/breakpoints" as bp;
+
+.modeBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 64px;
+  padding: 12px 17px;
+  margin-bottom: 20px;
+  border: 1px solid #e0e7ee;
+  border-radius: 9px;
+  background: #edf2f6;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #66758a;
+  > div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    min-width: 0;
+  }
+  strong {
+    font-weight: 600;
+    color: #4b5f75;
+  }
+  button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 4px;
+    border: 0;
+    background: none;
+    color: #4b5f75;
+    white-space: nowrap;
+    font-size: 11px;
+    font-weight: 600;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+.searchCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  padding: 27px 30px 0;
+  box-shadow: 0 3px 7px #24272d02;
+  h2 {
+    font-size: 23px;
+    font-weight: 650;
+    letter-spacing: -0.5px;
+    margin: 0;
+  }
+}
+.sectionEyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 9px;
+  font-weight: 650;
+  letter-spacing: 1.3px;
+  color: #b32a30;
+  margin-bottom: 15px;
+}
+.searchDescription {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+  margin: 10px 0 24px;
+}
+.inputLabel {
+  display: block;
+  font-size: 12px;
+  font-weight: 550;
+  margin-bottom: 9px;
+}
+.searchInputWrap {
+  height: 54px;
+  border: 1px solid #d6d9df;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-inline: 16px;
+  max-width: 700px;
+  background: #fdfdfd;
+  &:focus-within {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px #c82d320d;
+  }
+  > svg {
+    color: #9197a2;
+  }
+  input {
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    outline: none;
+    border: 0;
+    background: none;
+    font-size: 16px;
+    letter-spacing: 0.2px;
+    &::placeholder {
+      color: #a5a9b1;
+    }
+  }
+}
+.searchInputHint {
+  border: 1px solid var(--border);
+  padding: 4px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+  color: #8c929c;
+  font-size: 9px;
+}
+.clearButton {
+  border: 0;
+  background: none;
+  display: grid;
+  place-items: center;
+  color: #8c929c;
+  width: 44px;
+  height: 44px;
+  padding: 4px;
+  flex-shrink: 0;
+  &.hidden {
+    visibility: hidden;
+  }
+}
+.examples {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+  margin-top: 13px;
+  font-size: 11px;
+  color: #949aa3;
+  button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 36px;
+    padding: 6px 10px;
+    border: 0;
+    background: #f3f4f6;
+    color: #727985;
+    border-radius: 4px;
+    font-size: 11px;
+    &:hover {
+      background: #faecec;
+      color: #b32a30;
+    }
+  }
+}
+.searchCardBottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid #eff0f3;
+  margin-top: 25px;
+  padding-block: 15px;
+  font-size: 10px;
+  line-height: 1.6;
+  color: #9a9fa8;
+  > span:first-child {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    min-width: 0;
+    color: #808792;
+  }
+}
+.smallDot {
+  width: 5px;
+  height: 5px;
+  background: #c9343b;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.resultsSection {
+  margin-top: 30px;
+  min-width: 0;
+}
+.stepHeading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-height: 48px;
+  margin-bottom: 17px;
+  > div {
+    min-width: 0;
+  }
+  h2 {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.4;
+    letter-spacing: -0.35px;
+    font-weight: 650;
+  }
+  p {
+    font-size: 11px;
+    color: #959ba4;
+    margin: 5px 0 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+.stepNumber {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border: 1px solid #dfe2e7;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  background: var(--surface);
+  font-size: 12px;
+  font-weight: 550;
+  color: #a3a8b2;
+  &.complete {
+    color: #36846b;
+    border-color: #dcece4;
+    background: #f0f7f3;
+  }
+  &.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+  }
+}
+.countBadge {
+  margin-left: auto;
+  min-width: 32px;
+  text-align: center;
+  background: #e9ebef;
+  border-radius: 5px;
+  padding: 4px 8px;
+  color: #777f8b;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+// Fixed regions keep surrounding sections stable while requests are pending.
+.brandResults {
+  height: 204px;
+  overflow: auto;
+  scrollbar-gutter: stable;
+  border-radius: 9px;
+}
+.brandGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  align-content: start;
+}
+.offersBox {
+  height: 660px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 10px;
+  overflow: hidden;
+}
+@media (max-width: bp.$tablet) {
+  .brandGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .modeBanner {
+    align-items: flex-start;
+    > div {
+      align-items: flex-start;
+    }
+  }
+  .offersBox {
+    height: 720px;
+  }
+}
+@media (max-width: bp.$phone) {
+  .modeBanner {
+    min-height: 138px;
+    align-items: stretch;
+    flex-direction: column;
+    padding: 14px;
+    gap: 6px;
+    font-size: 11px;
+    > div > svg {
+      margin-top: 2px;
+    }
+    button {
+      align-self: flex-start;
+      padding-left: 28px;
+    }
+  }
+  .searchCard {
+    padding: 22px 18px 0;
+    h2 {
+      font-size: 20px;
+    }
+  }
+  .searchDescription {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  .searchInputWrap {
+    padding-inline: 12px;
+    gap: 8px;
+  }
+  .searchInputHint {
+    display: none;
+  }
+  .examples {
+    gap: 6px;
+  }
+  .searchCardBottom {
+    font-size: 10px;
+    align-items: flex-start;
+    > span:last-child {
+      text-align: right;
+      max-width: 110px;
+    }
+  }
+  .brandGrid {
+    gap: 10px;
+  }
+  .brandResults {
+    height: 216px;
+  }
+  .stepHeading {
+    gap: 10px;
+    h2 {
+      font-size: 15px;
+    }
+    p {
+      font-size: 10px;
+    }
+  }
+  .stepNumber {
+    width: 32px;
+    height: 32px;
+    font-size: 11px;
+  }
+  .resultsSection {
+    margin-top: 25px;
+  }
+  .offersBox {
+    height: clamp(580px, 80svh, 720px);
+  }
+}
+@media (max-width: bp.$compact) {
+  .brandGrid {
+    grid-template-columns: 1fr;
+  }
+  .searchCard {
+    padding-inline: 14px;
+  }
+  .stepHeading h2 {
+    font-size: 14px;
+  }
+  .stepHeading p {
+    font-size: 9px;
+  }
+}

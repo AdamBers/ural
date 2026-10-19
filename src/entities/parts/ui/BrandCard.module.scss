@@ -1,0 +1,102 @@
+@use "@/shared/styles/breakpoints" as bp;
+.card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  min-height: 94px;
+  padding: 16px;
+  text-align: left;
+  border: 1px solid #e0e3e9;
+  border-radius: 9px;
+  background: var(--surface);
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+  &:hover {
+    border-color: var(--accent);
+    box-shadow: 0 3px 12px #24272d07;
+  }
+  > svg {
+    margin-left: auto;
+    color: #a1a7b1;
+  }
+  &.selected {
+    border-color: var(--accent);
+    background: #fffafa;
+    box-shadow: 0 0 0 1px #c82d3215;
+    > svg {
+      color: var(--accent);
+    }
+  }
+}
+.monogram {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid #ece8d9;
+  border-radius: 6px;
+  background: #fff8dd;
+  color: #496742;
+  font-size: 21px;
+  font-weight: 800;
+  font-style: italic;
+}
+.tone1 {
+  color: #bb3238;
+  background: #fceeee;
+  border-color: #f5e0e1;
+}
+.tone2 {
+  color: #36618c;
+  background: #edf3fa;
+  border-color: #e2eaf2;
+}
+.tone3 {
+  color: #5f6a75;
+  background: #f1f2f4;
+  border-color: #e6e8ea;
+}
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+  strong {
+    font-size: 12px;
+    letter-spacing: 0.1px;
+    overflow-wrap: anywhere;
+  }
+  > span {
+    font-size: 11px;
+    color: #969da6;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+@media (max-width: bp.$phone) {
+  .card {
+    min-height: 94px;
+    padding: 12px 10px;
+    gap: 8px;
+    > svg {
+      width: 16px;
+    }
+  }
+  .monogram {
+    width: 28px;
+    height: 28px;
+    font-size: 17px;
+  }
+  .copy {
+    strong {
+      font-size: 11px;
+    }
+    > span {
+      font-size: 10px;
+    }
+  }
+}

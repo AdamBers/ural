@@ -1,0 +1,185 @@
+@use "@/shared/styles/breakpoints" as bp;
+.tableToolbar {
+  flex-shrink: 0;
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  gap: 12px;
+}
+.resultCount {
+  font-size: 12px;
+  color: #969da6;
+  b {
+    color: #454c56;
+    font-weight: 550;
+    margin-left: 4px;
+  }
+}
+.tableControls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 11px;
+  color: #737d8b;
+}
+.availability {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  cursor: pointer;
+  input {
+    accent-color: var(--accent);
+    width: 16px;
+    height: 16px;
+    margin: 0;
+  }
+}
+.sort {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  select {
+    max-width: 160px;
+    min-height: 44px;
+    font-size: 12px;
+    border: 0;
+    background: none;
+    color: #737d8b;
+    padding: 4px 0;
+    cursor: pointer;
+  }
+}
+.tableScroll {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  scrollbar-gutter: stable;
+  overscroll-behavior-inline: contain;
+}
+.table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+  font-size: 12px;
+  text-align: left;
+  th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    font-weight: 500;
+    background: #f6f7f9;
+    color: #838c98;
+    padding: 12px 16px;
+    font-size: 11px;
+    border-block: 1px solid #eceef1;
+  }
+  th:first-child {
+    width: 21%;
+  }
+  th:nth-child(2) {
+    width: 31%;
+  }
+  th:nth-child(3) {
+    width: 18%;
+  }
+  th:nth-child(4) {
+    width: 14%;
+  }
+  th:nth-child(5) {
+    width: 16%;
+  }
+}
+.price {
+  text-align: right;
+}
+.tableNote {
+  flex-shrink: 0;
+  min-height: 42px;
+  border-top: 1px solid #eceef1;
+  padding: 12px 20px;
+  color: #8c94a0;
+  font-size: 10px;
+  line-height: 1.7;
+  background: #fdfdfe;
+}
+.warehouseDot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #7b9d8f;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+@media (max-width: bp.$tablet) {
+  .tableScroll {
+    background: #f8f9fb;
+  }
+  .table {
+    display: block;
+    thead {
+      display: none;
+    }
+    tbody {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-content: start;
+      gap: 12px;
+      padding: 12px;
+    }
+  }
+  .tableToolbar {
+    padding-inline: 16px;
+  }
+}
+@media (max-width: bp.$phone) {
+  .tableToolbar {
+    min-height: 122px;
+    align-items: stretch;
+    justify-content: center;
+    padding: 12px 14px;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .tableControls {
+    width: 100%;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .availability {
+    font-size: 11px;
+    gap: 6px;
+    > svg {
+      display: none;
+    }
+  }
+  .sort select {
+    max-width: 142px;
+    font-size: 11px;
+  }
+  .table tbody {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 10px;
+  }
+  .tableNote {
+    min-height: 54px;
+    padding: 10px 14px;
+  }
+}
+@media (max-width: bp.$compact) {
+  .tableControls {
+    gap: 2px;
+  }
+  .sort > svg {
+    display: none;
+  }
+  .sort select {
+    max-width: 132px;
+  }
+}

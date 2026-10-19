@@ -1,0 +1,287 @@
+@use "@/shared/styles/breakpoints" as bp;
+
+.app {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.header {
+  height: 91px;
+  background: var(--surface);
+}
+.headerInner,
+.navInner,
+.main,
+.footer {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 32px;
+}
+.headerInner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  flex-shrink: 0;
+}
+.logoSymbol {
+  width: 43px;
+  height: 43px;
+  border-radius: 9px;
+  background: var(--accent);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 47px;
+  font-weight: 800;
+  line-height: 1;
+  padding-bottom: 11px;
+}
+.logoType {
+  font-size: 27px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: 1px;
+  > span {
+    display: block;
+    font-size: 8px;
+    font-weight: 650;
+    letter-spacing: 1.6px;
+    margin-top: 7px;
+  }
+}
+.headerDivider {
+  height: 31px;
+  width: 1px;
+  background: var(--border);
+}
+.headerCaption {
+  font-size: 12px;
+  color: var(--muted);
+}
+.supportLink {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12px;
+  font-weight: 500;
+  min-height: 44px;
+  &:hover {
+    color: var(--accent);
+  }
+}
+.navBar {
+  background: #24272d;
+  color: white;
+  height: 51px;
+}
+.navInner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.navActive {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 3px solid #ee5054;
+  font-size: 12px;
+  font-weight: 550;
+}
+.navCaption {
+  font-size: 11px;
+  color: #b5b8c0;
+}
+.main {
+  padding-block: 29px 36px;
+}
+.breadcrumbs {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 11px;
+  color: #969ba4;
+  span:last-child {
+    color: #636a75;
+  }
+}
+.pageHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin: 36px 0 27px;
+  h1 {
+    font-size: clamp(28px, 3vw, 38px);
+    line-height: 1.2;
+    letter-spacing: -1.2px;
+    margin: 0;
+    font-weight: 750;
+    > span {
+      color: var(--accent);
+    }
+  }
+  p {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 13px 0 0;
+    line-height: 1.7;
+  }
+}
+.eyebrow {
+  font-size: 9px;
+  font-weight: 650;
+  letter-spacing: 1.6px;
+  color: #999da5;
+  margin-bottom: 11px;
+}
+.headingMark {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #838a94;
+  font-size: 11px;
+  white-space: nowrap;
+  svg {
+    color: #a2a7af;
+  }
+}
+.helpStrip {
+  margin-top: 26px;
+  padding: 20px 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  > div {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    color: #8e96a1;
+    > span {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      font-size: 11px;
+      line-height: 1.6;
+    }
+  }
+  strong {
+    font-size: 12px;
+    color: #6d7683;
+    font-weight: 550;
+  }
+}
+.helpCaption {
+  color: #a0a6b0;
+  font-size: 10px;
+}
+.footer {
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 22px 25px;
+  font-size: 10px;
+  color: #959ba6;
+}
+.footerDot {
+  padding-inline: 8px;
+  color: #c4c8cf;
+}
+@media (max-width: bp.$tablet) {
+  .headingMark,
+  .helpCaption {
+    display: none;
+  }
+  .headerInner {
+    gap: 20px;
+  }
+  .headerCaption {
+    font-size: 11px;
+  }
+}
+@media (max-width: bp.$phone) {
+  .headerInner,
+  .navInner,
+  .main,
+  .footer {
+    padding-inline: 20px;
+  }
+  .header {
+    height: 77px;
+  }
+  .headerInner {
+    gap: 12px;
+  }
+  .headerCaption,
+  .headerDivider,
+  .navCaption {
+    display: none;
+  }
+  .logoType {
+    font-size: 24px;
+  }
+  .logoSymbol {
+    width: 37px;
+    height: 37px;
+    font-size: 41px;
+    padding-bottom: 10px;
+  }
+  .supportLink {
+    font-size: 11px;
+    gap: 6px;
+    > svg:last-child {
+      display: none;
+    }
+  }
+  .navBar {
+    height: 46px;
+  }
+  .main {
+    padding-top: 23px;
+  }
+  .pageHeading {
+    margin: 27px 0 22px;
+    p {
+      font-size: 12px;
+      max-width: 330px;
+    }
+  }
+  .eyebrow {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+  .helpStrip {
+    padding: 10px 0;
+    margin-top: 22px;
+  }
+  .footer {
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 19px;
+  }
+}
+@media (max-width: bp.$compact) {
+  .headerInner,
+  .navInner,
+  .main,
+  .footer {
+    padding-inline: 14px;
+  }
+  .supportLink {
+    font-size: 10px;
+  }
+  .pageHeading h1 {
+    font-size: 27px;
+  }
+}
