@@ -23,7 +23,10 @@ test("поиск, бренд, предложения, фильтр и сброс
   await expect(page.locator("tbody tr")).toHaveCount(8);
   await page.getByLabel("Только в наличии").check();
   await expect(page.locator("tbody tr")).toHaveCount(7);
-  await page.getByLabel("Сортировка предложений").selectOption("price");
+  await page.getByRole("combobox", { name: "Сортировка предложений" }).click();
+  await page
+    .getByRole("option", { name: "Сначала дешевле", exact: true })
+    .click();
   await expect(page.locator("tbody tr").first()).toContainText("FILTRON");
   await page.getByRole("button", { name: "Очистить артикул" }).click();
   await expect(page.getByRole("table")).toHaveCount(0);

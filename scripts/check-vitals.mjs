@@ -106,7 +106,12 @@ try {
     const tableOverflow = await page
       .getByTestId("offers-scroll")
       .evaluate((element) => element.scrollWidth > element.clientWidth);
-    await page.getByLabel("Сортировка предложений").selectOption("price");
+    await page
+      .getByRole("combobox", { name: "Сортировка предложений" })
+      .click();
+    await page
+      .getByRole("option", { name: "Сначала дешевле", exact: true })
+      .click();
     await page.getByLabel("Только в наличии").check();
     const next = page.getByRole("button", { name: "Следующая страница" });
     if (await next.count()) await next.click();

@@ -2,9 +2,15 @@ import styles from "./OffersTable.module.scss";
 import { useMemo, useRef, useState } from "react";
 import { SlidersHorizontal, ArrowDownUp } from "lucide-react";
 import OfferRow from "@/entities/parts/ui/OfferRow.jsx";
+import Select from "@/shared/ui/Select.jsx";
 import StatusPanel from "@/shared/ui/StatusPanel.jsx";
 import OffersPagination from "@/features/parts/searchParts/ui/OffersPagination.jsx";
 const PAGE_SIZE = 50;
+const SORT_OPTIONS = [
+  { value: "default", label: "По умолчанию" },
+  { value: "price", label: "Сначала дешевле" },
+  { value: "stock", label: "По остатку" },
+];
 function OffersTable({ offers }) {
   const [onlyAvailable, setOnlyAvailable] = useState(false);
   const [sort, setSort] = useState("default");
@@ -46,21 +52,18 @@ function OffersTable({ offers }) {
             />
             Только в наличии
           </label>
-          <label className={styles.sort}>
-            <ArrowDownUp size={15} />
-            <select
-              aria-label="Сортировка предложений"
+          <div className={styles.sort}>
+            <ArrowDownUp size={15} aria-hidden="true" />
+            <Select
+              label="Сортировка предложений"
               value={sort}
-              onChange={(event) => {
-                setSort(event.target.value);
+              options={SORT_OPTIONS}
+              onChange={(value) => {
+                setSort(value);
                 changePage(0);
               }}
-            >
-              <option value="default">По умолчанию</option>
-              <option value="price">Сначала дешевле</option>
-              <option value="stock">По остатку</option>
-            </select>
-          </label>
+            />
+          </div>
         </div>
       </div>
       {visible.length === 0 ? (

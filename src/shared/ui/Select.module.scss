@@ -1,0 +1,108 @@
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 196px;
+  max-width: 100%;
+  min-height: 44px;
+  padding: 9px 12px;
+  border: 1px solid #dce3ec;
+  border-radius: 9px;
+  color: #3e5069;
+  background: linear-gradient(160deg, #fff, #f8fafc);
+  box-shadow: inset 0 1px 0 #fff;
+  font-size: 16px;
+  text-align: left;
+  cursor: pointer;
+  &:hover {
+    border-color: #c0cad8;
+    background: #fff;
+  }
+  &[data-state="open"] {
+    border-color: var(--accent-border);
+    box-shadow: 0 0 0 3px var(--accent-ring);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  &[data-disabled] {
+    opacity: 0.5;
+    cursor: default;
+  }
+}
+.chevron {
+  display: flex;
+  color: #73829a;
+  [data-state="open"] > & {
+    transform: rotate(180deg);
+    color: var(--accent);
+  }
+}
+.content {
+  z-index: 110;
+  min-width: var(--radix-select-trigger-width);
+  max-width: calc(100vw - 24px);
+  max-height: var(--radix-select-content-available-height);
+  overflow: hidden;
+  border: 1px solid #dfe4ec;
+  border-radius: 12px;
+  background: #fffffff5;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  box-shadow:
+    0 12px 32px #23344d1a,
+    inset 0 1px 0 #fff;
+  color: #3e5069;
+}
+.viewport {
+  padding: 5px;
+}
+.item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 36px 10px 12px;
+  border-radius: 7px;
+  outline: none;
+  font-size: 16px;
+  line-height: 1.4;
+  cursor: pointer;
+  user-select: none;
+  &[data-state="checked"] {
+    color: var(--accent-hover);
+    background: var(--accent-soft);
+    font-weight: 550;
+  }
+  &[data-highlighted] {
+    background: #edf1f6;
+    color: #25364f;
+  }
+  &[data-state="checked"][data-highlighted] {
+    background: #f9e6e9;
+    color: var(--accent-hover);
+  }
+  &[data-disabled] {
+    opacity: 0.45;
+    cursor: default;
+  }
+}
+.indicator {
+  position: absolute;
+  right: 12px;
+  display: flex;
+  color: var(--accent);
+}
+.scrollButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  color: #73829a;
+}
+// The highlighted row provides the keyboard focus treatment inside the listbox.
+.content .item:focus-visible {
+  outline: none;
+}

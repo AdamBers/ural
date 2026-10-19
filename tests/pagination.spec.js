@@ -61,7 +61,12 @@ for (const viewport of [
       await next.click();
       await expect(rows).toHaveCount(11);
       await expect(rows.last()).toContainText("Позиция 122");
-      await page.getByLabel("Сортировка предложений").selectOption("price");
+      await page
+        .getByRole("combobox", { name: "Сортировка предложений" })
+        .click();
+      await page
+        .getByRole("option", { name: "Сначала дешевле", exact: true })
+        .click();
       await expect(
         page.getByText("Страница 1 из 2", { exact: true }),
       ).toBeVisible();

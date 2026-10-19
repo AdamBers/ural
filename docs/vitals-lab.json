@@ -1,5 +1,5 @@
 {
-  "measuredAt": "2026-10-19T17:11:18.227Z",
+  "measuredAt": "2026-10-19T17:15:00.726Z",
   "environment": "Local production build, Chromium, CPU 4x slowdown, 1.6 Mbps / 150 ms RTT; delayed synthetic 7000 offers; cold browser contexts",
   "limits": {
     "LCP": 2500,
@@ -14,26 +14,19 @@
         "height": 1000
       },
       "initial": {
-        "LCP": 1064,
+        "LCP": 1200,
         "CLS": 0
       },
       "vitals": {
-        "LCP": 1064,
-        "CLS": 0.08520261188271604,
-        "INP": 40
+        "LCP": 1200,
+        "CLS": 0.00042087537977430556,
+        "INP": 64
       },
       "shifts": [
         {
           "value": 0.000025667860243055555,
           "sources": [
             "P"
-          ]
-        },
-        {
-          "value": 0.08520261188271604,
-          "sources": [
-            "_row_fr9ak_1",
-            "_row_fr9ak_1"
           ]
         },
         {
@@ -72,11 +65,11 @@
         "height": 1024
       },
       "initial": {
-        "LCP": 1024,
+        "LCP": 1196,
         "CLS": 0
       },
       "vitals": {
-        "LCP": 1024,
+        "LCP": 1196,
         "CLS": 0.0017452631921817858,
         "INP": 48
       },
@@ -114,13 +107,13 @@
         "height": 844
       },
       "initial": {
-        "LCP": 1028,
+        "LCP": 1184,
         "CLS": 0
       },
       "vitals": {
-        "LCP": 1028,
+        "LCP": 1184,
         "CLS": 0.003749081120030363,
-        "INP": 48
+        "INP": 56
       },
       "shifts": [
         {
@@ -159,17 +152,17 @@
         "height": 740
       },
       "initial": {
-        "LCP": 1012,
+        "LCP": 1224,
         "CLS": 0
       },
       "vitals": {
-        "LCP": 1012,
-        "CLS": 0.008292766161431701,
-        "INP": 40
+        "LCP": 1224,
+        "CLS": 0.0077744682763422205,
+        "INP": 48
       },
       "shifts": [
         {
-          "value": 0.008292766161431701,
+          "value": 0.0077744682763422205,
           "sources": [
             "_brandResults_bfnv9_259"
           ]

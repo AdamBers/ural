@@ -54,7 +54,12 @@ for (const viewport of devices) {
       expect(bounds.x).toBeGreaterThanOrEqual(area.x);
       expect(bounds.x + bounds.width).toBeLessThanOrEqual(area.x + area.width);
       await page.getByLabel("Только в наличии").check();
-      await page.getByLabel("Сортировка предложений").selectOption("price");
+      await page
+        .getByRole("combobox", { name: "Сортировка предложений" })
+        .click();
+      await page
+        .getByRole("option", { name: "Сначала дешевле", exact: true })
+        .click();
       await expect(page.locator("tbody tr").first()).toContainText("FILTRON");
       await expect(
         page.getByRole("button", { name: "Следующая страница" }),

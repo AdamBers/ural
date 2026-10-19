@@ -46,17 +46,6 @@
   align-items: center;
   gap: 7px;
   min-width: 0;
-  select {
-    max-width: 184px;
-    min-height: 44px;
-    padding: 7px 6px;
-    border: 1px solid #dfe6ef;
-    border-radius: 5px;
-    background: #f9fbfd;
-    color: #4b596b;
-    font-size: 16px;
-    cursor: pointer;
-  }
 }
 .tableScroll {
   flex: 1;
@@ -156,9 +145,6 @@
   .availability > svg {
     display: none;
   }
-  .sort select {
-    max-width: 176px;
-  }
   .table tbody {
     grid-template-columns: 1fr;
     gap: 12px;
@@ -172,8 +158,5 @@
 @media (max-width: bp.$compact) {
   .sort > svg {
     display: none;
-  }
-  .sort select {
-    max-width: 176px;
   }
 }
