@@ -1,8 +1,8 @@
 @use "@/shared/styles/breakpoints" as bp;
 .workspace {
   display: grid;
-  grid-template-columns: 300px minmax(0, 1fr);
-  grid-template-rows: 340px 334px;
+  grid-template-columns: 340px minmax(0, 1fr);
+  grid-template-rows: 450px 420px;
   grid-template-areas: "search offers" "brands offers";
   gap: 20px;
   padding: 20px;
@@ -30,14 +30,14 @@
   }
 }
 .searchDescription {
-  color: #7b896b;
-  font-size: 11px;
+  color: #66745b;
+  font-size: 14px;
   line-height: 1.7;
   margin: 8px 0 21px;
 }
 .inputLabel {
   display: block;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 550;
   margin-bottom: 8px;
   color: #6e7b60;
@@ -78,7 +78,7 @@
     color: #34412b;
     &::placeholder {
       color: #b0b8a5;
-      font-size: 13px;
+      font-size: 14px;
     }
   }
 }
@@ -105,8 +105,8 @@
   flex-wrap: wrap;
   gap: 6px;
   margin-top: 16px;
-  color: #7c896d;
-  font-size: 9px;
+  color: #66745b;
+  font-size: 14px;
   > span {
     width: 100%;
     margin-bottom: 2px;
@@ -115,15 +115,15 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    min-height: 32px;
+    min-height: 40px;
     padding: 5px 8px;
     border: 1px solid #e0e7d3;
     border-radius: 7px;
     background: #fcfdf8;
     color: #6e7f5a;
-    font-size: 9px;
+    font-size: 14px;
     svg {
-      width: 10px;
+      width: 12px;
     }
     &:hover {
       border-color: #a9bf84;
@@ -134,14 +134,15 @@
 }
 .searchCardBottom {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 7px;
+  gap: 8px 12px;
   border-top: 1px solid #e5eadb;
   margin-top: auto;
   padding-top: 13px;
   min-height: 50px;
-  font-size: 9px;
+  font-size: 14px;
   line-height: 1.7;
   > span:first-child {
     display: flex;
@@ -167,8 +168,8 @@
   padding: 4px 0 4px 3px;
   border: 0;
   background: none;
-  color: #849272;
-  font-size: 8px;
+  color: #66745b;
+  font-size: 14px;
   svg {
     width: 11px;
   }
@@ -217,7 +218,7 @@
   }
   p {
     margin: 5px 0 0;
-    font-size: 10px;
+    font-size: 14px;
     line-height: 1.6;
     color: #7d8c6b;
     white-space: nowrap;
@@ -226,10 +227,10 @@
   }
 }
 .brandsSection .stepHeading h2 {
-  font-size: 13px;
+  font-size: 14px;
 }
 .brandsSection .stepHeading p {
-  font-size: 9px;
+  font-size: 14px;
 }
 .stepNumber {
   display: grid;
@@ -240,9 +241,9 @@
   border: 1px solid #e3e8da;
   border-radius: 8px;
   background: #fff;
-  color: #a3ae95;
+  color: #66745b;
   font-family: ui-monospace, monospace;
-  font-size: 10px;
+  font-size: 14px;
   &.complete {
     color: #5d7b37;
     background: #eaf4d8;
@@ -261,14 +262,14 @@
   padding: 3px 7px;
   border-radius: 6px;
   background: #f0f3eb;
-  color: #82906f;
+  color: #66745b;
   text-align: center;
   font-family: ui-monospace, monospace;
-  font-size: 10px;
+  font-size: 14px;
 }
 .brandResults {
   flex: 1;
-  height: 240px;
+  height: 326px;
   min-height: 0;
   overflow: auto;
   scrollbar-gutter: stable;
@@ -281,7 +282,7 @@
   align-content: start;
 }
 .offersBox {
-  height: 634px;
+  height: 830px;
   display: flex;
   flex-direction: column;
   min-width: 0;
@@ -293,13 +294,13 @@
 @media (max-width: 1099px) {
   .workspace {
     grid-template-columns: 1fr;
-    grid-template-rows: auto 256px auto;
+    grid-template-rows: auto 340px auto;
     grid-template-areas: "search" "brands" "offers";
     padding: 16px;
     gap: 16px;
   }
   .searchCard {
-    min-height: 300px;
+    min-height: 390px;
     padding: 22px;
   }
   .searchDescription {
@@ -313,7 +314,7 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .brandResults {
-    height: 162px;
+    height: 246px;
   }
   .offersBox {
     height: 700px;
@@ -330,7 +331,7 @@
     padding: 11px;
     border-radius: 18px;
     gap: 15px;
-    grid-template-rows: auto 334px auto;
+    grid-template-rows: auto 420px auto;
   }
   .searchCard {
     padding: 18px 15px;
@@ -340,7 +341,7 @@
     }
   }
   .searchDescription {
-    font-size: 11px;
+    font-size: 14px;
     margin-top: 7px;
   }
   .examples {
@@ -350,11 +351,11 @@
     }
   }
   .searchCardBottom {
-    font-size: 8px;
+    font-size: 14px;
     gap: 5px;
   }
   .modeSwitch {
-    font-size: 8px;
+    font-size: 14px;
   }
   .brandGrid {
     grid-template-columns: 1fr;
@@ -365,12 +366,12 @@
     border-radius: 12px;
   }
   .brandResults {
-    height: 240px;
+    height: 326px;
   }
   .offersSection .stepHeading {
     padding-inline: 3px;
     h2 {
-      font-size: 15px;
+      font-size: 18px;
     }
   }
   .offersBox {
@@ -392,5 +393,24 @@
   }
   .modeSwitch {
     margin-left: auto;
+  }
+}
+
+.stepHeading h2 {
+  font-size: 19px;
+}
+.brandsSection .stepHeading h2 {
+  font-size: 18px;
+}
+.stepNumber {
+  width: 34px;
+  height: 34px;
+}
+.countBadge {
+  min-width: 32px;
+}
+@media (max-width: 767px) {
+  .offersBox {
+    height: clamp(700px, 85svh, 840px);
   }
 }

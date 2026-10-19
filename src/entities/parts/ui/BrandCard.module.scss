@@ -4,8 +4,8 @@
   align-items: center;
   gap: 9px;
   min-width: 0;
-  min-height: 54px;
-  padding: 9px 10px;
+  min-height: 74px;
+  padding: 12px;
   border: 1px solid #e7ebdf;
   border-radius: 9px;
   background: #fff;
@@ -35,8 +35,8 @@
   display: grid;
   place-items: center;
   flex-shrink: 0;
-  width: 26px;
-  height: 26px;
+  width: 32px;
+  height: 32px;
   border: 1px solid #e3e8d9;
   border-radius: 6px;
   background: #f5f7ef;
@@ -63,15 +63,15 @@
   gap: 4px;
   min-width: 0;
   strong {
-    font-size: 11px;
+    font-size: 16px;
     font-weight: 600;
     color: #60714d;
     letter-spacing: 0.1px;
     overflow-wrap: anywhere;
   }
   > span {
-    font-size: 10px;
-    color: #849574;
+    font-size: 14px;
+    color: #66745b;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -79,10 +79,10 @@
 }
 @media (max-width: bp.$phone) {
   .card {
-    min-height: 54px;
-    padding: 9px 10px;
+    min-height: 74px;
+    padding: 12px;
   }
   .copy strong {
-    font-size: 11px;
+    font-size: 16px;
   }
 }

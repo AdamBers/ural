@@ -8,8 +8,8 @@
   gap: 12px;
   padding: 8px 18px;
   border-top: 1px solid #edf0e6;
-  color: #a3ad94;
-  font-size: 11px;
+  color: #66745b;
+  font-size: 14px;
   font-variant-numeric: tabular-nums;
   > div {
     display: flex;
@@ -36,7 +36,7 @@
 @media (max-width: bp.$phone) {
   .offersPagination {
     padding-inline: 12px;
-    font-size: 10px;
+    font-size: 14px;
     gap: 6px;
     > div {
       gap: 6px;
@@ -49,5 +49,14 @@
     flex-direction: column;
     justify-content: center;
     gap: 3px;
+  }
+}
+
+@media (max-width: 767px) {
+  .offersPagination {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 8px;
+    padding-block: 12px;
   }
 }

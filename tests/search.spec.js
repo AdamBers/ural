@@ -20,9 +20,9 @@ test("поиск, бренд, предложения, фильтр и сброс
   await expect(brand).toBeVisible();
   await brand.click();
   await expect(page.getByRole("table")).toBeVisible();
-  await expect(page.getByRole("row")).toHaveCount(9);
+  await expect(page.locator("tbody tr")).toHaveCount(8);
   await page.getByLabel("Только в наличии").check();
-  await expect(page.getByRole("row")).toHaveCount(8);
+  await expect(page.locator("tbody tr")).toHaveCount(7);
   await page.getByLabel("Сортировка предложений").selectOption("price");
   await expect(page.locator("tbody tr").first()).toContainText("FILTRON");
   await page.getByRole("button", { name: "Очистить артикул" }).click();

@@ -56,7 +56,7 @@
   border-radius: 8px;
   background: #f1f4ea;
   color: #495740;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 550;
 }
 .headerActions {
@@ -70,8 +70,8 @@
   align-items: center;
   gap: 7px;
   min-height: 44px;
-  color: #899080;
-  font-size: 11px;
+  color: #66745b;
+  font-size: 14px;
   &:hover {
     color: #263424;
   }
@@ -85,7 +85,7 @@
   border-radius: 8px;
   background: #292f28;
   color: #f5f7ed;
-  font-size: 11px;
+  font-size: 14px;
   &:hover {
     background: #414c38;
   }
@@ -114,21 +114,21 @@
     }
     small {
       font-size: 19px;
-      color: #899380;
+      color: #66745b;
       font-weight: 400;
       letter-spacing: -0.5px;
     }
   }
   > p {
     margin: 0;
-    color: #7b8770;
-    font-size: 11px;
+    color: #66745b;
+    font-size: 14px;
     line-height: 1.85;
   }
 }
 .eyebrow {
-  color: #8c957f;
-  font-size: 8px;
+  color: #66745b;
+  font-size: 14px;
   letter-spacing: 1.6px;
   font-weight: 600;
 }
@@ -138,8 +138,8 @@
   justify-content: space-between;
   gap: 18px;
   padding: 13px 1px;
-  font-size: 10px;
-  color: #939c89;
+  font-size: 14px;
+  color: #66745b;
   > span {
     display: flex;
     align-items: center;
@@ -160,8 +160,8 @@
   justify-content: space-between;
   gap: 20px;
   border-top: 1px solid #e1e5da;
-  color: #a0a793;
-  font-size: 9px;
+  color: #66745b;
+  font-size: 14px;
   > div {
     display: flex;
     gap: 22px;
@@ -217,7 +217,7 @@
   .accountLink {
     min-height: 40px;
     padding-inline: 10px;
-    font-size: 10px;
+    font-size: 14px;
     gap: 10px;
   }
   .main {
@@ -236,7 +236,7 @@
     flex-wrap: wrap;
     row-gap: 0;
     padding-top: 10px;
-    font-size: 9px;
+    font-size: 14px;
     line-height: 1.7;
     > a {
       margin-left: 23px;
@@ -258,7 +258,7 @@
   .pageHeading h1 {
     font-size: 24px;
     small {
-      font-size: 13px;
+      font-size: 14px;
     }
     > span {
       padding: 0;
@@ -268,7 +268,22 @@
     gap: 10px;
   }
   .accountLink {
-    font-size: 9px;
+    font-size: 14px;
     gap: 7px;
+  }
+}
+
+.pageHeading h1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 8px;
+}
+.accountLink {
+  min-height: 44px;
+}
+@media (max-width: 420px) {
+  .helpLink {
+    display: none;
   }
 }

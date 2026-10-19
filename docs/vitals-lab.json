@@ -1,5 +1,5 @@
 {
-  "measuredAt": "2026-10-19T16:33:01.338Z",
+  "measuredAt": "2026-10-19T16:40:59.680Z",
   "environment": "Local production build, Chromium, CPU 4x slowdown, 1.6 Mbps / 150 ms RTT; delayed synthetic 7000 offers; cold browser contexts",
   "limits": {
     "LCP": 2500,
@@ -14,51 +14,51 @@
         "height": 1000
       },
       "initial": {
-        "LCP": 1028,
+        "LCP": 1024,
         "CLS": 0
       },
       "vitals": {
-        "LCP": 1028,
-        "CLS": 0.04601217881944445,
-        "INP": 40
+        "LCP": 1024,
+        "CLS": 0.08408397955246913,
+        "INP": 32
       },
       "shifts": [
         {
-          "value": 0.00010281702112268519,
+          "value": 0.000210234375,
           "sources": [
             "P"
           ]
         },
         {
-          "value": 0.04601217881944445,
+          "value": 0.08408397955246913,
           "sources": [
-            "_row_quxy6_1",
-            "_row_quxy6_1"
+            "_row_14d1w_1",
+            "_row_14d1w_1"
           ]
         },
         {
-          "value": 0.0002196850887345679,
+          "value": 0.0003106431749131945,
           "sources": [
             "#text",
             "P",
             "H3",
-            "_icon_kyvho_30"
+            "_icon_nf0m0_30"
           ]
         },
         {
-          "value": 0.0002060276813271605,
+          "value": 0.00029166943962191357,
           "sources": [
             "P",
             "H3",
-            "_icon_kyvho_30"
+            "_icon_nf0m0_30"
           ]
         },
         {
-          "value": 0.00014014226466049383,
+          "value": 0.0002880161012249228,
           "sources": [
             "H3",
             "P",
-            "_icon_kyvho_30"
+            "_icon_nf0m0_30"
           ]
         }
       ],
@@ -72,35 +72,35 @@
         "height": 1024
       },
       "initial": {
-        "LCP": 1052,
+        "LCP": 1012,
         "CLS": 0
       },
       "vitals": {
-        "LCP": 1052,
-        "CLS": 0.0008244039490818977,
+        "LCP": 1012,
+        "CLS": 0.00178831210359931,
         "INP": 40
       },
       "shifts": [
         {
-          "value": 0.00041220197454094887,
+          "value": 0.000894156051799655,
           "sources": [
             "P",
             "H3"
           ]
         },
         {
-          "value": 0.00041220197454094887,
+          "value": 0.000894156051799655,
           "sources": [
             "P",
             "H3"
           ]
         },
         {
-          "value": 0.00036210566759109497,
+          "value": 0.0007422637039174637,
           "sources": [
             "H3",
             "P",
-            "_icon_kyvho_30"
+            "_icon_nf0m0_30"
           ]
         }
       ],
@@ -114,38 +114,38 @@
         "height": 844
       },
       "initial": {
-        "LCP": 1032,
+        "LCP": 1016,
         "CLS": 0
       },
       "vitals": {
-        "LCP": 1032,
-        "CLS": 0.004270384647060822,
+        "LCP": 1016,
+        "CLS": 0.002721551985479051,
         "INP": 40
       },
       "shifts": [
         {
-          "value": 0.002189905771923247,
+          "value": 0.0014061140262820369,
           "sources": [
-            "P",
             "#text",
+            "P",
             "H3",
-            "_icon_kyvho_30"
+            "_icon_nf0m0_30"
           ]
         },
         {
-          "value": 0.0020804788751375754,
+          "value": 0.001315437959197014,
           "sources": [
             "P",
             "H3",
-            "_icon_kyvho_30"
+            "_icon_nf0m0_30"
           ]
         },
         {
-          "value": 0.00103439373755629,
+          "value": 0.0021355126851690274,
           "sources": [
             "H3",
             "P",
-            "_icon_kyvho_30"
+            "_icon_nf0m0_30"
           ]
         }
       ],
@@ -159,38 +159,43 @@
         "height": 740
       },
       "initial": {
-        "LCP": 1024,
+        "LCP": 1016,
         "CLS": 0
       },
       "vitals": {
-        "LCP": 1024,
-        "CLS": 0.002991554054054054,
-        "INP": 40
+        "LCP": 1016,
+        "CLS": 0.016353951297422845,
+        "INP": 48
       },
       "shifts": [
         {
-          "value": 0.0015464527027027027,
+          "value": 0.00000488709254017531,
           "sources": [
+            "_stepNumber_cgafl_253 "
+          ]
+        },
+        {
+          "value": 0.008176975648711423,
+          "sources": [
+            "P",
+            "H3",
+            "_icon_nf0m0_30"
+          ]
+        },
+        {
+          "value": 0.008176975648711423,
+          "sources": [
+            "P",
             "#text",
-            "P",
             "H3",
-            "_icon_kyvho_30"
+            "_icon_nf0m0_30"
           ]
         },
         {
-          "value": 0.0014451013513513515,
+          "value": 0.007462275725894814,
           "sources": [
             "P",
-            "H3",
-            "_icon_kyvho_30"
-          ]
-        },
-        {
-          "value": 0.0016553426314828343,
-          "sources": [
-            "H3",
-            "P",
-            "_icon_kyvho_30"
+            "H3"
           ]
         }
       ],
