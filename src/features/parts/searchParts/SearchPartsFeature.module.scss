@@ -228,6 +228,7 @@
   font-size: 18px;
 }
 .stepNumber {
+  align-self: flex-start;
   display: grid;
   place-items: center;
   flex-shrink: 0;
