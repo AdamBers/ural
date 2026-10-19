@@ -1,88 +1,52 @@
-@use "@/shared/styles/breakpoints" as bp;
 .card {
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 12px;
   min-width: 0;
-  min-height: 74px;
-  padding: 12px;
-  border: 1px solid #e7ebdf;
-  border-radius: 9px;
+  min-height: 75px;
+  padding: 13px 12px;
+  border: 0;
+  border-bottom: 1px solid #e5eaf1;
+  border-left: 3px solid transparent;
   background: #fff;
   text-align: left;
   transition:
-    border-color 0.15s,
-    background 0.15s;
+    background 0.15s,
+    border-color 0.15s;
   > svg {
-    width: 14px;
+    flex-shrink: 0;
+    width: 17px;
     margin-left: auto;
-    color: #bdc5b0;
+    color: #99a8ba;
   }
   &:hover {
-    border-color: #b7c996;
-    background: #fbfdf8;
+    background: #f5f8fc;
   }
   &.selected {
-    border-color: #bfd99a;
-    background: #edf6dc;
-    box-shadow: inset 3px 0 0 #9abf59;
+    border-left-color: #3676b9;
+    background: #eef4fc;
     > svg {
-      color: #688c3a;
+      color: #2864a6;
     }
   }
-}
-.monogram {
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  width: 32px;
-  height: 32px;
-  border: 1px solid #e3e8d9;
-  border-radius: 6px;
-  background: #f5f7ef;
-  color: #83956c;
-  font-size: 14px;
-  font-weight: 700;
-}
-.tone1 {
-  background: #faf3ee;
-  color: #b2957e;
-  border-color: #f0e4da;
-}
-.tone2 {
-  background: #f1f4ed;
-  color: #8a9b7c;
-}
-.tone3 {
-  background: #f4f4ed;
-  color: #a19f7e;
 }
 .copy {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
   min-width: 0;
   strong {
+    color: #253b56;
     font-size: 16px;
     font-weight: 600;
-    color: #60714d;
     letter-spacing: 0.1px;
     overflow-wrap: anywhere;
   }
   > span {
+    color: #71839a;
     font-size: 14px;
-    color: #66745b;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
-}
-@media (max-width: bp.$phone) {
-  .card {
-    min-height: 74px;
-    padding: 12px;
-  }
-  .copy strong {
-    font-size: 16px;
   }
 }

@@ -75,11 +75,10 @@ function SearchPartsFeature() {
   else if (brands.length)
     brandContent = (
       <div className={styles.brandGrid}>
-        {brands.map((item, index) => (
+        {brands.map((item) => (
           <BrandCard
             key={item.brand}
             item={item}
-            index={index}
             selected={brand === item.brand}
             onSelect={(value) => dispatch(selectBrand(value))}
           />
@@ -123,14 +122,14 @@ function SearchPartsFeature() {
     offerContent = (
       <StatusPanel title="Здесь появятся предложения">
         {brands.length
-          ? "Производитель на предыдущем шаге."
+          ? "Выберите производителя, чтобы увидеть предложения."
           : "Сначала укажите артикул и выберите производителя."}
       </StatusPanel>
     );
   return (
     <div className={styles.workspace}>
       <section className={styles.searchCard} id="part-search">
-        <h2>Номер детали</h2>
+        <h2>Поиск по артикулу</h2>
         <p className={styles.searchDescription}>
           Введите номер с упаковки детали.
         </p>
@@ -221,9 +220,6 @@ function SearchPartsFeature() {
                 : "Сравните цены и наличие на складах"}
             </p>
           </div>
-          {offers.length > 0 && (
-            <span className={styles.countBadge}>{offers.length}</span>
-          )}
         </div>
         <div className={styles.offersBox}>{offerContent}</div>
       </section>

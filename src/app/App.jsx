@@ -11,9 +11,7 @@ function App() {
             className={styles.wordmark}
             aria-label="FAVORIT — главная"
           >
-            favorit
-            <span className={styles.brandDot} />
-            <span className={styles.brandSuffix}>parts</span>
+            FAVORIT<span className={styles.brandSuffix}>PARTS</span>
           </a>
           <a className={styles.currentPage} href="#part-search">
             <ScanLine size={15} />
@@ -46,16 +44,9 @@ function App() {
         <div className={styles.pageHeading}>
           <div>
             <div className={styles.eyebrow}>КАТАЛОГ АВТОЗАПЧАСТЕЙ</div>
-            <h1>
-              Поиск запчастей<span> / </span>
-              <small>По артикулу</small>
-            </h1>
+            <h1>Подбор запчастей</h1>
           </div>
-          <p>
-            Нужная деталь — среди тысяч предложений.
-            <br />
-            Найдём, сравним, покажем наличие.
-          </p>
+          <p>Производители, аналоги и предложения складов</p>
         </div>
         <SearchPartsFeature />
         <div className={styles.helper}>

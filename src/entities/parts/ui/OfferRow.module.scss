@@ -1,28 +1,32 @@
 @use "@/shared/styles/breakpoints" as bp;
 .row {
+  line-height: 1.55;
   > td {
-    padding: 18px 16px;
-    border-bottom: 1px solid #edf0e6;
-    color: #68755c;
+    padding: 19px 17px;
+    border-bottom: 1px solid #e6ebf2;
+    color: #47586f;
     overflow-wrap: anywhere;
+  }
+  &:nth-child(even) {
+    background: #fafbfd;
   }
   &:last-child > td {
     border-bottom: 0;
   }
   &:hover {
-    background: #fcfdf9;
+    background: #f1f6fc;
   }
   strong {
-    color: #536445;
+    color: #24364e;
     font-size: 16px;
     font-weight: 650;
   }
 }
 .article {
   display: block;
-  font-size: 14px;
-  color: #66745b;
   margin-top: 7px;
+  color: #697c94;
+  font-size: 14px;
   overflow-wrap: anywhere;
 }
 .offerName {
@@ -30,72 +34,76 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  font-size: 16px;
   line-height: 1.6;
 }
 .rowTags {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
+  flex-wrap: wrap;
   gap: 8px;
   margin-top: 8px;
 }
 .tag {
-  color: #66745b;
+  padding: 3px 7px;
+  border-radius: 4px;
+  background: #edf1f6;
+  color: #6d7e95;
   font-size: 14px;
-  background: #f5f7ef;
-  border-radius: 3px;
-  padding: 3px 6px;
   &.original {
-    color: #66745b;
-    background: #eff6e4;
+    color: #3b6a9b;
+    background: #eaf2fc;
   }
 }
 .muted {
-  color: #66745b;
+  color: #8895a7;
   font-size: 14px;
 }
 .warehouseDot {
   display: inline-block;
   width: 5px;
   height: 5px;
+  margin-right: 7px;
   border-radius: 50%;
-  background: #a7bc8d;
-  margin-right: 6px;
+  background: #7292b7;
   vertical-align: middle;
 }
 .stock {
-  color: #627d49;
-  font-weight: 500;
+  color: #367a60;
   font-size: 16px;
+  font-weight: 550;
   &.unavailable {
-    color: #66745b;
+    color: #8795a7;
     font-size: 14px;
   }
 }
 .row > .price {
-  text-align: right;
+  color: #182b43;
   font-size: 22px;
   font-weight: 650;
-  color: #404d37;
   letter-spacing: -0.3px;
   font-variant-numeric: tabular-nums;
+  text-align: right;
 }
 @media (max-width: bp.$offerCards) {
   .row {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     align-content: start;
-    gap: 14px 12px;
-    padding: 18px 16px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    background: var(--surface);
+    gap: 16px 12px;
     min-width: 0;
+    padding: 20px 17px;
+    border: 1px solid #dce4ef;
+    border-radius: 6px;
+    background: #fff;
+    &:nth-child(even) {
+      background: #fff;
+    }
     > td {
       display: block;
+      min-width: 0;
       padding: 0;
       border: 0;
-      min-width: 0;
     }
     > td:first-child {
       grid-column: 1;
@@ -114,15 +122,14 @@
     > td:nth-child(4) {
       grid-column: 2;
       grid-row: 3;
-      text-align: right;
       align-self: center;
+      text-align: right;
     }
     > .price {
       grid-column: 2;
       grid-row: 1;
       align-self: start;
       white-space: nowrap;
-      font-size: 22px;
     }
   }
   .offerName {
@@ -134,17 +141,10 @@
 }
 @media (max-width: bp.$compact) {
   .row {
-    gap: 12px 8px;
-    padding: 16px 12px;
+    gap: 14px 8px;
+    padding: 18px 12px;
     > .price {
       font-size: 20px;
     }
   }
-}
-
-.offerName {
-  font-size: 16px;
-}
-.row {
-  line-height: 1.55;
 }

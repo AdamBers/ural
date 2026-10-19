@@ -51,12 +51,12 @@
 
 :root {
   --surface: #fff;
-  --accent: #536c37;
-  --border: #e0e5d9;
-  --muted: #66745b;
+  --accent: #245ea3;
+  --border: #dce3eb;
+  --muted: #64748b;
   font-family: "Golos Text", Arial, sans-serif;
-  color: #293128;
-  background: #f5f6f0;
+  color: #1f2937;
+  background: #f2f4f7;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
@@ -108,7 +108,7 @@ a:focus-visible,
 input:focus-visible,
 select:focus-visible,
 [tabindex]:focus-visible {
-  outline: 3px solid #789d45;
+  outline: 3px solid #3b82c4;
 }
 @media (prefers-reduced-motion: reduce) {
   *,
