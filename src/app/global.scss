@@ -51,7 +51,11 @@
 
 :root {
   --surface: #fff;
-  --accent: #245ea3;
+  --accent: #b63540;
+  --accent-hover: #922b34;
+  --accent-soft: #fff3f4;
+  --accent-border: #eac2c7;
+  --accent-ring: #b635401f;
   --border: #dce3eb;
   --muted: #64748b;
   font-family: "Golos Text", Arial, sans-serif;
@@ -108,7 +112,7 @@ a:focus-visible,
 input:focus-visible,
 select:focus-visible,
 [tabindex]:focus-visible {
-  outline: 3px solid #3b82c4;
+  outline: 3px solid var(--accent);
 }
 @media (prefers-reduced-motion: reduce) {
   *,

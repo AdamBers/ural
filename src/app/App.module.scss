@@ -5,9 +5,9 @@
 }
 .header {
   height: 76px;
-  background: #172437;
+  background: #20252c;
   color: #fff;
-  border-bottom: 1px solid #26374d;
+  border-bottom: 1px solid #343c47;
 }
 .headerInner,
 .main,
@@ -36,8 +36,8 @@
   font-size: 14px;
   font-weight: 450;
   letter-spacing: 1.8px;
-  color: #9aadc5;
-  border-left: 1px solid #465369;
+  color: #a7afb9;
+  border-left: 1px solid #49515c;
   padding-left: 11px;
 }
 .currentPage {
@@ -45,7 +45,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  border-bottom: 3px solid #7eb3ef;
+  border-bottom: 3px solid #e68b91;
   padding-inline: 4px;
   color: #e1ebf8;
   font-size: 15px;
@@ -80,8 +80,8 @@
   font-weight: 500;
   color: #fff;
   &:hover {
-    background: #24374f;
-    border-color: #7494b6;
+    background: #303740;
+    border-color: #a86d75;
   }
 }
 .main {
@@ -133,7 +133,7 @@
     align-items: center;
     gap: 8px;
     min-height: 44px;
-    color: #245ea3;
+    color: var(--accent);
   }
 }
 .footer {

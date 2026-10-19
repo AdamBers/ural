@@ -26,11 +26,11 @@
   border: 1px solid #dce4ee;
   border-radius: 5px;
   background: #fff;
-  color: #456789;
+  color: #526173;
   &:hover:not(:disabled) {
-    color: #245ea3;
-    border-color: #9cb9d9;
-    background: #f3f7fc;
+    color: var(--accent);
+    border-color: var(--accent-border);
+    background: var(--accent-soft);
   }
   &:disabled {
     opacity: 0.35;

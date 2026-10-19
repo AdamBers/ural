@@ -23,10 +23,10 @@
     background: #f5f8fc;
   }
   &.selected {
-    border-left-color: #3676b9;
-    background: #eef4fc;
+    border-left-color: var(--accent);
+    background: var(--accent-soft);
     > svg {
-      color: #2864a6;
+      color: var(--accent);
     }
   }
 }

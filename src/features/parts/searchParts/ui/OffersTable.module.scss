@@ -38,7 +38,7 @@
     width: 17px;
     height: 17px;
     margin: 0;
-    accent-color: #326fb0;
+    accent-color: var(--accent);
   }
 }
 .sort {
@@ -53,7 +53,7 @@
     border: 1px solid #dfe6ef;
     border-radius: 5px;
     background: #f9fbfd;
-    color: #435e7d;
+    color: #4b596b;
     font-size: 16px;
     cursor: pointer;
   }

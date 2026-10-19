@@ -50,8 +50,8 @@
   border-radius: 6px;
   background: #fff;
   &:focus-within {
-    border-color: #3b78bb;
-    box-shadow: 0 0 0 3px #3b82c41c;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-ring);
   }
   > svg {
     width: 18px;
@@ -123,9 +123,9 @@
       width: 11px;
     }
     &:hover {
-      color: #245ea3;
-      border-color: #9bb8d8;
-      background: #eef5fd;
+      color: var(--accent);
+      border-color: var(--accent-border);
+      background: var(--accent-soft);
     }
   }
 }
@@ -171,7 +171,7 @@
     width: 12px;
   }
   &:hover {
-    color: #245ea3;
+    color: var(--accent);
   }
 }
 .demoStatus {
@@ -245,9 +245,9 @@
     border-color: #d5e7df;
   }
   &.active {
-    color: #245ea3;
-    background: #eaf2fc;
-    border-color: #d3e2f5;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-color: var(--accent-border);
   }
 }
 .countBadge {
