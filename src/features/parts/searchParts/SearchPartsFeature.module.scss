@@ -97,31 +97,31 @@
   }
 }
 .examples {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr) minmax(0, 1.5fr);
   align-items: center;
-  flex-wrap: wrap;
-  gap: 7px;
+  gap: 6px;
+  max-width: 360px;
   margin-top: 18px;
   color: #64748b;
   font-size: 14px;
   > span {
-    width: 100%;
+    grid-column: 1 / -1;
     margin-bottom: 2px;
   }
   button {
     display: flex;
     align-items: center;
-    gap: 4px;
+    justify-content: center;
+    min-width: 0;
+    white-space: nowrap;
     min-height: 38px;
-    padding: 5px 7px;
+    padding: 5px;
     border: 1px solid #dce4ee;
     border-radius: 4px;
     background: #f8fafc;
     color: #526780;
     font-size: 14px;
-    svg {
-      width: 11px;
-    }
     &:hover {
       color: var(--accent);
       border-color: var(--accent-border);
@@ -287,10 +287,6 @@
   .offersBox {
     height: 740px;
   }
-  .examples > span {
-    width: auto;
-    margin: 0 4px 0 0;
-  }
 }
 @media (max-width: bp.$phone) {
   .workspace {
@@ -306,10 +302,6 @@
   }
   .searchDescription {
     margin-bottom: 20px;
-  }
-  .examples > span {
-    width: 100%;
-    margin: 0;
   }
   .brandsSection {
     padding: 18px 16px;

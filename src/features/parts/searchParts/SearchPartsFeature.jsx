@@ -163,7 +163,6 @@ function SearchPartsFeature() {
           {["W 914/2", "01089", "7160500039S"].map((value) => (
             <button key={value} onClick={() => chooseExample(value)}>
               {value}
-              <ArrowRight size={12} />
             </button>
           ))}
         </div>
