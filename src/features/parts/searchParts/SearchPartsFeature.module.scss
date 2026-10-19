@@ -227,30 +227,6 @@
 .brandsSection .stepHeading h2 {
   font-size: 18px;
 }
-.stepNumber {
-  align-self: flex-start;
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  width: 34px;
-  height: 34px;
-  border: 1px solid #dce4ee;
-  border-radius: 6px;
-  background: #f7f9fc;
-  color: #6a7d97;
-  font-family: ui-monospace, monospace;
-  font-size: 14px;
-  &.complete {
-    color: #367660;
-    background: #f0f7f3;
-    border-color: #d5e7df;
-  }
-  &.active {
-    color: var(--accent);
-    background: var(--accent-soft);
-    border-color: var(--accent-border);
-  }
-}
 .countBadge {
   flex-shrink: 0;
   min-width: 32px;

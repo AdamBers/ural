@@ -1,7 +1,7 @@
 import styles from "./SearchPartsFeature.module.scss";
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Search, ArrowRight, Check, X } from "lucide-react";
+import { Search, ArrowRight, X } from "lucide-react";
 import {
   fetchBrands,
   fetchOffers,
@@ -184,11 +184,6 @@ function SearchPartsFeature() {
       </section>
       <section className={`${styles.resultsSection} ${styles.brandsSection}`}>
         <div className={styles.stepHeading}>
-          <span
-            className={`${styles.stepNumber} ${brand ? styles.complete : ""}`}
-          >
-            {brand ? <Check size={18} /> : "01"}
-          </span>
           <div>
             <h2>Производитель</h2>
             <p>Производители для вашего артикула</p>
@@ -207,11 +202,6 @@ function SearchPartsFeature() {
       </section>
       <section className={`${styles.resultsSection} ${styles.offersSection}`}>
         <div className={styles.stepHeading}>
-          <span
-            className={`${styles.stepNumber} ${brand ? styles.active : ""}`}
-          >
-            02
-          </span>
           <div>
             <h2>Предложения и аналоги</h2>
             <p>
