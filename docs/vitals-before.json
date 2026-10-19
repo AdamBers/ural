@@ -1,0 +1,216 @@
+{
+  "measuredAt": "2026-10-19T16:02:32.193Z",
+  "environment": "Local production build, Chromium, CPU 4x slowdown, 1.6 Mbps / 150 ms RTT; delayed synthetic 7000 offers; cold browser contexts",
+  "limits": {
+    "LCP": 2500,
+    "INP": 200,
+    "CLS": 0.1
+  },
+  "note": "Laboratory interaction measurements, not field p75 or a PageSpeed score. Covers initial load, delayed brands/offers, sorting/filtering/pagination, empty and error states.",
+  "results": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "initial": {
+        "LCP": 2296,
+        "CLS": 0.005205156227394385
+      },
+      "vitals": {
+        "LCP": 2296,
+        "CLS": 0.4428666666666667,
+        "INP": 928
+      },
+      "shifts": [
+        {
+          "value": 0.005196503137659143,
+          "sources": [
+            "search-card",
+            "results-section",
+            "mode-banner",
+            "#text",
+            "heading-mark"
+          ]
+        },
+        {
+          "value": 0.000008653089735243055,
+          "sources": [
+            "BUTTON",
+            {}
+          ]
+        },
+        {
+          "value": 0.0015743880208333335,
+          "sources": [
+            "results-section offers-section"
+          ]
+        },
+        {
+          "value": 0.4428666666666667,
+          "sources": [
+            "results-section offers-section",
+            "help-strip",
+            "FOOTER"
+          ]
+        },
+        {
+          "value": 0.0005015137622974537,
+          "sources": [
+            "#text",
+            "#text"
+          ]
+        },
+        {
+          "value": 0.0005015137622974537,
+          "sources": [
+            "#text",
+            "#text"
+          ]
+        },
+        {
+          "value": 0.01383431037808642,
+          "sources": [
+            "results-section offers-section",
+            "help-strip",
+            "FOOTER",
+            "#text",
+            "#text"
+          ]
+        }
+      ],
+      "rows": 7000,
+      "overflow": false,
+      "tableOverflow": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "initial": {
+        "LCP": 2140,
+        "CLS": 0.002177508631406441
+      },
+      "vitals": {
+        "LCP": 2140,
+        "CLS": 0.018017304135933547,
+        "INP": 280
+      },
+      "shifts": [
+        {
+          "value": 0.0021744377491261686,
+          "sources": [
+            "search-card-bottom",
+            "search-input-wrap",
+            "examples",
+            "search-description",
+            "#text"
+          ]
+        },
+        {
+          "value": 0.000003070882280272231,
+          "sources": [
+            {}
+          ]
+        },
+        {
+          "value": 0.005975464473982027,
+          "sources": [
+            "results-section offers-section"
+          ]
+        },
+        {
+          "value": 0.001299836752347927,
+          "sources": [
+            "#text",
+            "#text"
+          ]
+        },
+        {
+          "value": 0.001299836752347927,
+          "sources": [
+            "#text",
+            "#text"
+          ]
+        },
+        {
+          "value": 0.018017304135933547,
+          "sources": [
+            "results-section offers-section",
+            "#text",
+            "#text"
+          ]
+        }
+      ],
+      "rows": 7000,
+      "overflow": false,
+      "tableOverflow": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 740
+      },
+      "initial": {
+        "LCP": 2132,
+        "CLS": 0.0022808462495434623
+      },
+      "vitals": {
+        "LCP": 2132,
+        "CLS": 0.01889527027027027,
+        "INP": 296
+      },
+      "shifts": [
+        {
+          "value": 0.00227578296201607,
+          "sources": [
+            "search-input-wrap",
+            "examples",
+            "search-description",
+            "#text",
+            "input-label"
+          ]
+        },
+        {
+          "value": 0.000005063287527392257,
+          "sources": [
+            {}
+          ]
+        },
+        {
+          "value": 0.007274225027392258,
+          "sources": [
+            "results-section offers-section",
+            "DIV"
+          ]
+        },
+        {
+          "value": 0.0016042532185902118,
+          "sources": [
+            "#text",
+            "#text"
+          ]
+        },
+        {
+          "value": 0.0016042532185902118,
+          "sources": [
+            "#text",
+            "#text"
+          ]
+        },
+        {
+          "value": 0.01889527027027027,
+          "sources": [
+            "results-section offers-section",
+            "#text",
+            "#text"
+          ]
+        }
+      ],
+      "rows": 7000,
+      "overflow": false,
+      "tableOverflow": true
+    }
+  ]
+}

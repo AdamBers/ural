@@ -1,0 +1,138 @@
+{
+  "measuredAt": "2026-10-19T16:04:54.201Z",
+  "environment": "Local production build, Chromium, CPU 4x slowdown, 1.6 Mbps / 150 ms RTT; delayed synthetic 7000 offers; cold browser contexts",
+  "limits": {
+    "LCP": 2500,
+    "INP": 200,
+    "CLS": 0.1
+  },
+  "note": "Laboratory interaction measurements, not field p75 or a PageSpeed score. Covers initial load, delayed brands/offers, sorting/filtering/pagination, empty and error states.",
+  "results": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "initial": {
+        "LCP": 1016,
+        "CLS": 0
+      },
+      "vitals": {
+        "LCP": 1016,
+        "CLS": 0.0008656174045138889,
+        "INP": 48
+      },
+      "shifts": [
+        {
+          "value": 0.00043280870225694446,
+          "sources": [
+            "#text",
+            "P"
+          ]
+        },
+        {
+          "value": 0.00043280870225694446,
+          "sources": [
+            "#text",
+            "P"
+          ]
+        },
+        {
+          "value": 0.0006542751736111111,
+          "sources": [
+            "#text",
+            "P",
+            "status-icon"
+          ]
+        }
+      ],
+      "rows": 50,
+      "overflow": false,
+      "tableOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "initial": {
+        "LCP": 1016,
+        "CLS": 0
+      },
+      "vitals": {
+        "LCP": 1016,
+        "CLS": 0.0023039783624149712,
+        "INP": 48
+      },
+      "shifts": [
+        {
+          "value": 0.0011519891812074856,
+          "sources": [
+            "#text",
+            "P"
+          ]
+        },
+        {
+          "value": 0.0011519891812074856,
+          "sources": [
+            "#text",
+            "P"
+          ]
+        },
+        {
+          "value": 0.0012018960801557779,
+          "sources": [
+            "#text",
+            "P",
+            "status-icon"
+          ]
+        }
+      ],
+      "rows": 50,
+      "overflow": false,
+      "tableOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 740
+      },
+      "initial": {
+        "LCP": 1044,
+        "CLS": 0
+      },
+      "vitals": {
+        "LCP": 1044,
+        "CLS": 0.003261101710874726,
+        "INP": 40
+      },
+      "shifts": [
+        {
+          "value": 0.001630550855437363,
+          "sources": [
+            "P",
+            "#text"
+          ]
+        },
+        {
+          "value": 0.001630550855437363,
+          "sources": [
+            "P",
+            "#text"
+          ]
+        },
+        {
+          "value": 0.001675229124817385,
+          "sources": [
+            "#text",
+            "P",
+            "status-icon"
+          ]
+        }
+      ],
+      "rows": 50,
+      "overflow": false,
+      "tableOverflow": false
+    }
+  ]
+}
